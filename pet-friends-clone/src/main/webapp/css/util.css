@@ -15,6 +15,8 @@
     width: 512px;
 }
 
-.display-ib {
-    display: inline !important;
+/* flex 설정 */
+.flex-center {
+    display: flex;
+    justify-content: center;
 }
