@@ -3,6 +3,13 @@
     src: url('../../resources/fonts/malgun.ttf');
 }
 
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -10,4 +17,9 @@
     list-style: none;
     box-sizing: border-box;
     font-family: '맑은고딕', '굴림', '돋움', sans-serif;
+    color: #2d3035;
+}
+
+a {
+    text-decoration: none;
 }

@@ -1,5 +1,6 @@
 body {
-    background-image: url('../../resources/images/main/background/background.png');
+    /* background-image: url('../../resources/images/main/background/background.png'); */
+    background-image: url('/pet-friends-clone/src/main/resources/images/main/background/background.png');
     /* 화면의 높이를 100%로 설정합니다. (1vh는 화면 높이의 1%) */
     height: 100vh;
     /* 배경 이미지가 화면을 꽉 채우도록 비율을 유지하며 크기를 조정합니다. */
@@ -10,13 +11,15 @@ body {
     background-attachment: fixed;
 }
 
-#pet-left-header-logo {
+/* 상단 로고 */
+#petLeftHeaderLogo {
     width: 140px;
     height: 24px;
 }
 
+/* 이미지 슬라이드 */
 .slider-container {
-    width: 430px;
+    width: 429px;
     height: 230px;
     overflow: hidden;
     position: relative;
@@ -27,4 +30,29 @@ body {
     height: 100%;
     position: absolute;
     transition: transform 0.2s ease-in-out;
+}
+
+/* svg icons */
+#headerSelector {
+    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header-selector.svg');
+}
+
+#headerSearchButton {
+    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header-search-button.svg');
+}
+
+#headerShoppingCart {
+    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header-shopping-cart.svg');
+}
+
+/* 네비게이터 */
+#nav-ul li {
+    font-size: 13px;
+    font-weight: normal;
+}
+
+#nav-ul li.active {
+    font-weight: bold;
+    border-bottom: 2px solid red;
+    padding-bottom: 5px;
 }

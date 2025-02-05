@@ -1,6 +1,5 @@
-<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg" color="var(--colors-primary)">
-  <g id="24-shoppingcart">
-    <path id="Vector 48" d="M18.3245 7.50085H5.67552C5.17431 7.50085 4.75053 7.87189 4.68429 8.36869L3.15096 19.8687C3.07102 20.4682 3.53739 21.0009 4.14218 21.0009H19.8578C20.4626 21.0009 20.929 20.4682 20.849 19.8687L19.3157 8.36869C19.2495 7.87188 18.8257 7.50085 18.3245 7.50085Z" stroke="currentColor" stroke-width="2"></path>
-    <path id="Vector" d="M9 11.0009V6.73074C9 4.67144 10.3425 3.00085 12 3.00085C13.6575 3.00085 15 4.67144 15 6.73074V11.0009" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path>
-  </g>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+  xmlns="http://www.w3.org/2000/svg" color="var(--colors-primary)">
+  <path d="M18 11C18 14.866 14.866 18 11 18C7.13401 18 4 14.866 4 11C4 7.13401 7.13401 4 11 4C14.866 4 18 7.13401 18 11Z" stroke="currentColor" stroke-width="2"></path>
+  <path d="M16 16L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
 </svg>

@@ -1,4 +1,8 @@
-/* 가로 넓이 */
+/*
+    =================================
+    Width
+    =================================
+*/
 .width375 {
     width: 400px;
 }
@@ -15,8 +19,117 @@
     width: 512px;
 }
 
-/* flex 설정 */
+/*
+    =================================
+    Display
+    =================================
+*/
 .flex-center {
     display: flex;
     justify-content: center;
+}
+
+.flex-center-align {
+    display: flex;
+    align-items: center;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+/*
+    =================================
+    Padding
+    =================================
+*/
+.padtop43 {
+    padding-top: 43px;
+}
+
+.padright50 {
+    padding-right: 80px;
+}
+
+.padright10 {
+    padding-right: 10px;
+}
+
+.pad12-15-15-25 {
+    padding: 12px 15px 15px 15px;
+}
+
+.pad5-10-8 {
+    padding: 5px 10px 8px;
+}
+
+.pad10-0 {
+    padding: 10px 0px;
+}
+
+/*
+    =================================
+    Font
+    =================================
+*/
+.font-bold13 {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.font-13 {
+    font-size: 13px;
+}
+
+/*
+    =================================
+    Border
+    =================================
+*/
+.bd-weak {
+    border: 1px solid #dbdde0;
+}
+
+.bd-circle {
+    border-radius: 20px;
+    background-color: #fff1f5;
+}
+
+/*
+    =================================
+    Icon
+    =================================
+*/
+.icon18x18 {
+    width: 18px;
+    height: 18px;
+    position: relative;
+    top: 2px;
+}
+
+.icon24x24 {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    top: 2px;
+}
+/*
+    =================================
+    Background
+    =================================
+*/
+.bg-white {
+    background-color: white;
+}
+
+.underline {
+    display: inline-block;
+    border-bottom: 2px solid red; /* 밑줄 색상을 파랑으로, 두께 조절 가능 */
+    padding-bottom: 5px; /* 글자와 밑줄 사이 간격 조절 */
 }

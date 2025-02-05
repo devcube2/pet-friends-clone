@@ -3,32 +3,68 @@
 
 <head>
 	<meta charset="UTF-8">
+
 	<title>반려동물 1등 쇼핑몰, 펫프렌즈</title>
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/common.css">
 	<link rel="stylesheet" href="css/util.css">
 	<link rel="stylesheet" href="css/index.css">
-	<link rel="stylesheet" href="css/common.css">
+
+	<!-- favicon -->
 	<link rel="icon" type="image/x-icon" href="favicon.ico">
+
+	<script src="js/etc.js"></script>
 </head>
 
 <body>
-	<div class="flex-center">
+	<div class="flex-center padright50">
 		<!-- 소개 및 검색 페이지 -->
-		<div class="width512">
+		<aside class="width512 padtop43">
 			<div class="width400">
-				<img id="pet-left-header-logo" src="../resources/images/main/background/background-logo.png" alt="좌측 로고">
+				<img id="petLeftHeaderLogo" src="../resources/images/main/background/background-logo.png">
 			</div>
-		</div>
+		</aside>
 
-		<!-- 쇼핑 페이지 -->
-		<div id="main-content" class="width430">
+		<!-- 메인 쇼핑 페이지 -->
+		<main id="mainContent" class="width430 bd-weak bg-white">
+			<header class="flex-between pad12-15-15-25">
+				<div class="flex-center-align">
+					<div class="bd-circle flex-center-align pad5-10-8">
+						<span class="font-bold13 padright10">고양이</span>
+						<div id="headerSelector" class="icon18x18"></div>
+					</div>
+					&nbsp;
+					<div class="bd-circle flex-center-align pad5-10-8">
+						<span class="font-bold13 padright10">배송지 입력</span>
+						<div id="headerSelector" class="icon18x18"></div>
+					</div>
+				</div>
+				<div class="flex-center">
+					<div id="headerSearchButton" class="icon24x24"></div>
+					&nbsp;&nbsp;&nbsp;
+					<div id="headerShoppingCart" class="icon24x24"></div>
+				</div>
+			</header>
+
+			<nav class="pad10-0">
+				<ul id="nav-ul" class="flex-around">
+					<li><a href="#">HOME</a></li>
+					<li><a href="#">웰컴펫페어</a></li>
+					<li><a href="#">사료 최저가 도전!</a></li>
+					<li><a href="#">신년맞이 빅세일</a></li>
+				</ul>
+			</nav>
+
 			<div class="slider-container">
-				<img id="slideImage" src="1.webp" alt="슬라이드 이미지">
+				<!-- src 는 js 에서 넣어준다. -->
+				<img id="slideImage">
 			</div>
 			<button onclick="nextSlide()">다음 이미지</button>
-		</div>
+		</main>
 	</div>
 
-	<script src="js/etc.js"></script>
+	<script src="js/index.js"></script>
 </body>
 
 </html>
