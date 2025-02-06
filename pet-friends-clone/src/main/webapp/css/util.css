@@ -87,6 +87,23 @@
     font-size: 13px;
 }
 
+.font-10 {
+    font-size: 10px;
+}
+
+/*
+    =================================
+    Color
+    =================================
+*/
+.color-white {
+    color: white;
+}
+
+.color-c6c9ce {
+    color: #c6c9ce;
+}
+
 /*
     =================================
     Border
@@ -106,6 +123,12 @@
     Icon
     =================================
 */
+.icon10x10 {
+    width: 10px;
+    height: 10px;
+    position: relative;
+}
+
 .icon18x18 {
     width: 18px;
     height: 18px;
@@ -119,6 +142,7 @@
     position: relative;
     top: 2px;
 }
+
 /*
     =================================
     Background
@@ -130,6 +154,25 @@
 
 .underline {
     display: inline-block;
-    border-bottom: 2px solid red; /* 밑줄 색상을 파랑으로, 두께 조절 가능 */
-    padding-bottom: 5px; /* 글자와 밑줄 사이 간격 조절 */
+    border-bottom: 2px solid red;
+    /* 글자와 밑줄 사이 간격 조절 */
+    padding-bottom: 5px;
+}
+
+/*
+    =================================
+    Transform
+    =================================
+*/
+.flip-arrow {
+    transform: scaleX(-1);
+}
+
+/*
+    =================================
+    Cursor
+    =================================
+*/
+.cursor-default {
+    cursor: default;
 }

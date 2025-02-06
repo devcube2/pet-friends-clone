@@ -57,10 +57,19 @@
 			</nav>
 
 			<div class="slider-container">
-				<!-- src 는 js 에서 넣어준다. -->
-				<img id="slideImage">
+				<img id="slideImage"> <!-- src 는 js 에서 넣어준다. -->
+				<button id="nextSlideButton" class="slideButtonStyle" onclick="nextSlide()">
+					<img src="../resources/images/main/icons/main/slideArrow.svg">
+				</button>
+				<button id="prevSlideButton" class="slideButtonStyle" onclick="prevSlide()">
+					<img src="../resources/images/main/icons/main/slideArrow.svg" class="flip-arrow">
+				</button>
+				<div id="slideCount" class="cursor-default">
+					<span id="slideCurrentCount" class="font-10 color-white">1</span>
+					<span class="font-10 color-c6c9ce">/ 20</span>
+					<img src="../resources/images/main/icons/main/plusSymbol.svg" class="icon10x10">
+				</div>
 			</div>
-			<button onclick="nextSlide()">다음 이미지</button>
 		</main>
 	</div>
 
