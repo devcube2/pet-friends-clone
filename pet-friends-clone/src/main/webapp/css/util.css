@@ -73,6 +73,10 @@
     padding: 10px 0px;
 }
 
+.pad7-16 {
+    padding: 7px 16px;
+}
+
 /*
     =================================
     Font
@@ -87,8 +91,16 @@
     font-size: 13px;
 }
 
+.font-11 {
+    font-size: 11px;
+}
+
 .font-10 {
     font-size: 10px;
+}
+
+.bold {
+    font-weight: bold;
 }
 
 /*
@@ -102,6 +114,10 @@
 
 .color-c6c9ce {
     color: #c6c9ce;
+}
+
+.color-757c89 {
+    color: #757c89;
 }
 
 /*
@@ -175,4 +191,14 @@
 */
 .cursor-default {
     cursor: default;
+}
+
+/*
+    =================================
+    Position
+    =================================
+*/
+.pos-top2 {
+    position: relative;
+    top: 2px;
 }

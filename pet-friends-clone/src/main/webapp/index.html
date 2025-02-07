@@ -28,6 +28,7 @@
 
 		<!-- 메인 쇼핑 페이지 -->
 		<main id="mainContent" class="width430 bd-weak bg-white">
+			<!-- 최상단 헤더 -->
 			<header class="flex-between pad12-15-15-25">
 				<div class="flex-center-align">
 					<div class="bd-circle flex-center-align pad5-10-8">
@@ -47,6 +48,7 @@
 				</div>
 			</header>
 
+			<!-- 상단 네비게이터 -->
 			<nav class="pad10-0">
 				<ul id="nav-ul" class="flex-around">
 					<li><a href="#">HOME</a></li>
@@ -56,6 +58,7 @@
 				</ul>
 			</nav>
 
+			<!-- 이미지 슬라이더 -->
 			<div class="slider-container">
 				<img id="slideImage"> <!-- src 는 js 에서 넣어준다. -->
 				<button id="nextSlideButton" class="slideButtonStyle" onclick="nextSlide()">
@@ -70,6 +73,24 @@
 					<img src="../resources/images/main/icons/main/plusSymbol.svg" class="icon10x10">
 				</div>
 			</div>
+
+			<!-- 공지사항 -->
+			<div class="font-11 flex-between pad7-16">
+				<div>
+					<p class="bold color-757c89">공지</p>
+					<p id=""></p>
+				</div>
+				<!-- 우측 화살표 표시(색상 적용안되서 직접 svg 코드 가져와서 적용했음) -->
+				<div class="pos-top2">
+					<svg width="12" height="12" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<g id="18-arrowright">
+							<path id="Vector 3" d="M7 4.00195L12 9.00195L7 14.002" stroke="#757c89" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round"></path>
+						</g>
+					</svg>
+				</div>
+			</div>
+
 		</main>
 	</div>
 

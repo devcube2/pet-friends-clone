@@ -32,6 +32,10 @@ document.addEventListener("DOMContentLoaded", function () {
     imgElement.src = images[0];
 });
 
+/*
+ *   슬라이드 화면 구현
+ */
+
 // 메인쇼핑 슬라이드 화면 구현
 let currentIndex = 0;
 const interval = 3000; // 3초 간격 이미지 슬라이드
@@ -110,3 +114,7 @@ function setSlideCurrentCount(count) {
 }
 
 rotateSlideTimerList.push(setTimeout(rotateSlide, interval)); // 첫 자동 슬라이드 시작
+
+/*
+ *   공지사항 화면 구현
+ */
