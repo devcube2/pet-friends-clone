@@ -59,7 +59,7 @@
 			</nav>
 
 			<!-- 이미지 슬라이더 -->
-			<div class="slider-container">
+			<section class="slider-container">
 				<img id="slideImage"> <!-- src 는 js 에서 넣어준다. -->
 				<button id="nextSlideButton" class="slideButtonStyle" onclick="nextSlide()">
 					<img src="../resources/images/main/icons/main/slideArrow.svg">
@@ -72,15 +72,15 @@
 					<span class="font-10 color-c6c9ce">/ 20</span>
 					<img src="../resources/images/main/icons/main/plusSymbol.svg" class="icon10x10">
 				</div>
-			</div>
+			</section>
 
 			<!-- 공지사항 -->
-			<div class="font-11 flex-between pad7-16">
-				<div>
-					<p class="bold color-757c89">공지</p>
-					<p id=""></p>
+			<section class="font-11 flex-between pad7-16">
+				<div class="flex-around">
+					<p class="bold color-757c89">공지</p>&nbsp;
+					<p>[공지] 펫푸드 2000종 최대 69% 인하</p>
 				</div>
-				<!-- 우측 화살표 표시(색상 적용안되서 직접 svg 코드 가져와서 적용했음) -->
+				<!-- 우측 화살표 표시(색상 적용안되서 직접 svg 코드 가져와서 내용 편집 적용) -->
 				<div class="pos-top2">
 					<svg width="12" height="12" viewBox="0 0 18 19" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<g id="18-arrowright">
@@ -89,7 +89,22 @@
 						</g>
 					</svg>
 				</div>
-			</div>
+			</section>
+
+			<!-- 카테고리별 쇼핑-->
+			<section>
+				<!-- 대분류: 사료/간식/용품 -->
+				<nav id="category-main" class="flex-center margin25">
+					<button type="button" onclick=""><span>사료</span></button>&nbsp;
+					<button type="button" onclick=""><span>간식</span></button>&nbsp;
+					<button type="button" onclick=""><span>용품</span></button>
+				</nav>
+
+				<!-- 중분류: 주식캔, 어덜트, 키튼, 전연령, 파우치, 건식사료 등 -->
+				<nav id="category-sub">
+
+				</nav>
+			</section>
 
 		</main>
 	</div>

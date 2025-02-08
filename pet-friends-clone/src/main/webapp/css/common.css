@@ -23,3 +23,9 @@
 a {
     text-decoration: none;
 }
+
+/* 버튼 포커싱한 상태에서 F12 누르면 border: none 이 적용안되는 증상이 있어서 추가 */
+button:focus {
+    border: none !important;
+    outline: none !important;
+}

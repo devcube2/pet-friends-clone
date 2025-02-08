@@ -10,27 +10,71 @@ const images = [
 
 // HTML-CSS 모든 요소들이 다 로딩된 후 호출되는 이벤트
 document.addEventListener("DOMContentLoaded", function () {
-    // 네비게이터 메뉴 클릭시 하이라이트 기능 세팅
-    const listItems = document.querySelectorAll("#nav-ul li");
-    let activeItem = listItems[0]; // 처음은 HOME 버튼만 active 상태
-
-    activeItem.classList.add("active");
-
-    listItems.forEach((li) => {
-        li.addEventListener("click", function () { // li 요소마다 click 이벤트를 넣어준다.
-            if (activeItem) { // 현재 active 상태인 li 요소가 있다면 active css 제거
-                activeItem.classList.remove("active");
-            }
-
-            this.classList.add("active"); // 새로 클릭된 li 요소에 active css 적용
-            activeItem = this; // 현재 active 된 item 은 클릭된 자신이므로 activeItem 변수에 대입
-        });
-    });
+    // 상단 네비게이터 메뉴 클릭시 하이라이트
+    navTopActive();
 
     // 첫 슬라이드 이미지 세팅
     const imgElement = document.getElementById("slideImage");
     imgElement.src = images[0];
+
+    // 카테고리 쇼핑 네비게이터 메뉴 클릭시 하이라이트 기능
+    navCategoryActive();
 });
+
+/*
+ *   네비게이터 액티브 아이템 세팅 구현
+ */
+
+function setActiveClassTag(element) {
+    const listItems = document.querySelectorAll(element);
+    console.log(listItems);
+    let activeItem = listItems[0]; // 첫 active 요소 지정
+
+    activeItem.classList.add("active");
+
+    listItems.forEach((li) => {
+        li.addEventListener("click", function () { // 요소마다 click 이벤트를 넣어준다.
+            if (activeItem) { // 현재 active 상태인 요소가 있다면 active css 제거
+                activeItem.classList.remove("active");
+            }
+
+            this.classList.add("active"); // 새로 클릭된 요소에 active css 적용
+            activeItem = this; // 현재 active 된 item 은 클릭된 자신이므로 activeItem 변수에 대입
+        });
+    });
+}
+
+// 상단 메뉴 하이라이팅 함수
+function navTopActive() {
+    setActiveClassTag("#nav-ul li");
+}
+
+// 카테고리 쇼핑 하이라이팅 함수
+function navCategoryActive() {
+    const buttonListItems = document.querySelectorAll("#category-main button");
+    const spanListItems = document.querySelectorAll("#category-main span");
+
+    let buttonActiveItem = buttonListItems[0];
+    let spanActiveItem = spanListItems[0];
+
+    buttonActiveItem.classList.add("active");
+    spanActiveItem.classList.add("active");
+
+    buttonListItems.forEach((element, index) => {
+        // 클릭할떄 밑에 코드까지 고정되는것으로 보임.. index 값이 잘 적용된다..
+        element.addEventListener("click", function () {
+            // 기존 버튼에서 active 제거하고, 새로 클릭된 버튼에 active 추가
+            buttonActiveItem.classList.remove("active");
+            buttonActiveItem = this;
+            buttonActiveItem.classList.add("active");
+
+            // 기존 span 요소에서 active 제거하고, 새로 클릭된 span 에 active 추가 (실제 span 이 클릭된건 아니지만, 해당 버튼 하위요소로 포함되어 있기에 이렇게 처리했다.)
+            spanActiveItem.classList.remove("active");
+            spanActiveItem = spanListItems[index];
+            spanActiveItem.classList.add("active");
+        });
+    });
+}
 
 /*
  *   슬라이드 화면 구현
