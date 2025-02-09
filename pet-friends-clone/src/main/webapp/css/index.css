@@ -1,3 +1,9 @@
+/* 버튼 포커싱한 상태에서 F12 누르면 border: none 이 적용안되는 증상이 있어서 추가 */
+button:focus {
+    border: none !important;
+    outline: none !important;
+}
+
 body {
     /* background-image: url('../../resources/images/main/background/background.png'); */
     background-image: url('/pet-friends-clone/src/main/resources/images/main/background/background.png');
@@ -125,8 +131,8 @@ body {
     background-color: #ff4081;
 }
 
-/* 버튼안에 글자 박스에 안맞게 살짝 틀어진거 교정 */
-#category-main button span {
+
+#category-main button span { /* 버튼안에 글자 박스에 안맞게 살짝 틀어진거 교정 */
     position: relative;
     bottom: 2px;
 }
@@ -134,4 +140,36 @@ body {
 #category-main button span.active {
     color: white;
     font-weight: bold;
+}
+
+.category-sub-menu img {
+    width: 68px;
+}
+
+.category-sub-menu li {
+    width: 84px;
+}
+
+.category-sub-menu li>div {
+    display: flex;
+    justify-content: center;
+}
+
+#category-ul-qna img {
+    width: 125px;
+    height: 74px;
+}
+
+.divider {
+    width: 380px;
+    height: 1.5px;
+    background-color: #f8f8f8;
+}
+
+.category-sub-menu>ul>li {
+    cursor: pointer;
+}
+
+#category-main>button {
+    cursor: pointer;
 }

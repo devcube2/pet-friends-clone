@@ -24,7 +24,6 @@ document.addEventListener("DOMContentLoaded", function () {
 /*
  *   네비게이터 액티브 아이템 세팅 구현
  */
-
 function setActiveClassTag(element) {
     const listItems = document.querySelectorAll(element);
     console.log(listItems);
@@ -44,12 +43,12 @@ function setActiveClassTag(element) {
     });
 }
 
-// 상단 메뉴 하이라이팅 함수
+// 상단 메뉴 하이라이팅
 function navTopActive() {
     setActiveClassTag("#nav-ul li");
 }
 
-// 카테고리 쇼핑 하이라이팅 함수
+// 카테고리 쇼핑 하이라이팅
 function navCategoryActive() {
     const buttonListItems = document.querySelectorAll("#category-main button");
     const spanListItems = document.querySelectorAll("#category-main span");
@@ -61,14 +60,17 @@ function navCategoryActive() {
     spanActiveItem.classList.add("active");
 
     buttonListItems.forEach((element, index) => {
-        // 클릭할떄 밑에 코드까지 고정되는것으로 보임.. index 값이 잘 적용된다..
+        // 해당 요소 클릭 이벤트시 호출 코드를 추가하는건데..
+        // 코드안에 설정된 index 변수값까지 고정되는것으로 보임..
+        // 즉 define 처럼 클릭할때 define 된 함수 코드가 실행되는것 같다. (index 값 잘 적용됨..)
         element.addEventListener("click", function () {
             // 기존 버튼에서 active 제거하고, 새로 클릭된 버튼에 active 추가
             buttonActiveItem.classList.remove("active");
             buttonActiveItem = this;
             buttonActiveItem.classList.add("active");
 
-            // 기존 span 요소에서 active 제거하고, 새로 클릭된 span 에 active 추가 (실제 span 이 클릭된건 아니지만, 해당 버튼 하위요소로 포함되어 있기에 이렇게 처리했다.)
+            // 기존 span 요소에서 active 제거하고, 새로 클릭된 span 에 active 추가
+            // 실제 span 이 클릭된건 아니지만, 해당 버튼 하위요소로 포함되어 있기에 index 이용하여 이렇게 처리하였다.
             spanActiveItem.classList.remove("active");
             spanActiveItem = spanListItems[index];
             spanActiveItem.classList.add("active");
@@ -122,8 +124,8 @@ function sliding(currentIndex, x1, x2) {
 
     imgElement.style.transform = `translateX(${x1}%)`; // 원래 이미지를 이동시켜서 안보이게 한다.
 
-    imgElement.src = images[currentIndex];
-    imgElement.style.transition = "none"; // 다음 이미지를 안보이게 이동시킬때 애니메이션 효과 제거
+    imgElement.src = images[currentIndex]; // 다음 이미지 세팅
+    imgElement.style.transition = "none"; // 다음 이미지를 안보이게 하기 위해 이동시킬때 애니메이션 효과 제거
     imgElement.style.transform = `translateX(${x2}%)`; // 다음 이미지를 이동시켜서 안보이게 한다.
 
     setTimeout(() => {
@@ -157,8 +159,23 @@ function setSlideCurrentCount(count) {
     element.innerHTML = count;
 }
 
-rotateSlideTimerList.push(setTimeout(rotateSlide, interval)); // 첫 자동 슬라이드 시작
-
 /*
- *   공지사항 화면 구현
+ *   카테고리 쇼핑 메뉴 슬라이드 구현
  */
+function categoryMainSliding(category) {
+    const categoryElement = document.getElementById("catogorySub");
+
+    // 1290px 에서 절대위치로 이동이다.
+    if (category == '사료') {
+        categoryElement.style.transform = `translateX(0)`;
+    } else if (category == '간식') {
+        categoryElement.style.transform = `translateX(-440px)`;
+    } else if (category == '용품') {
+        categoryElement.style.transform = `translateX(-880px)`;
+    }
+    categoryElement.style.transition = "transform 300ms ease-out";
+}
+
+
+// 메인쇼핑 자동 슬라이드 시작
+rotateSlideTimerList.push(setTimeout(rotateSlide, interval));

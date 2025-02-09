@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부모보다 큰 요소 숨기기</title>
+    <style>
+        .parent {
+            width: 430px;
+            overflow: hidden; /* 부모를 초과하는 요소 숨김 */
+            border: 2px solid black;
+            white-space: nowrap; /* 한 줄 유지 */
+            position: relative;
+        }
+
+        .child {
+            width: 1290px; /* 부모보다 큰 컨테이너 */
+        }
+
+        .item {
+            display: inline-block;
+            width: 300px;
+            background: lightblue;
+            text-align: center;
+            margin-right: 10px;
+            padding: 10px;
+        }
+
+        .large {
+            width: 600px; /* 부모보다 큰 요소 */
+            display: none; /* 기본적으로 숨김 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="parent">
+        <div class="child">
+            <div class="item">Box 1 (300px)</div>
+            <div class="item large">Box 2 (600px, 숨겨짐)</div>
+            <div class="item">Box 3 (300px)</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const parentWidth = document.querySelector(".parent").offsetWidth;
+            const items = document.querySelectorAll(".child .item");
+
+            items.forEach(item => {
+                if (item.offsetWidth > parentWidth) {
+                    item.style.display = "none"; // 부모보다 큰 요소 숨기기
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

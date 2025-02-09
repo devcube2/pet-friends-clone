@@ -61,10 +61,10 @@
 			<!-- 이미지 슬라이더 -->
 			<section class="slider-container">
 				<img id="slideImage"> <!-- src 는 js 에서 넣어준다. -->
-				<button id="nextSlideButton" class="slideButtonStyle" onclick="nextSlide()">
+				<button id="nextSlideButton" class="slideButtonStyle cursor-pointer" onclick="nextSlide()">
 					<img src="../resources/images/main/icons/main/slideArrow.svg">
 				</button>
-				<button id="prevSlideButton" class="slideButtonStyle" onclick="prevSlide()">
+				<button id="prevSlideButton" class="slideButtonStyle cursor-pointer" onclick="prevSlide()">
 					<img src="../resources/images/main/icons/main/slideArrow.svg" class="flip-arrow">
 				</button>
 				<div id="slideCount" class="cursor-default">
@@ -92,20 +92,245 @@
 			</section>
 
 			<!-- 카테고리별 쇼핑-->
-			<section>
+			<section class="hidden">
 				<!-- 대분류: 사료/간식/용품 -->
 				<nav id="category-main" class="flex-center margin25">
-					<button type="button" onclick=""><span>사료</span></button>&nbsp;
-					<button type="button" onclick=""><span>간식</span></button>&nbsp;
-					<button type="button" onclick=""><span>용품</span></button>
+					<button type="button" onclick="categoryMainSliding('사료')"><span>사료</span></button>&nbsp;
+					<button type="button" onclick="categoryMainSliding('간식')"><span>간식</span></button>&nbsp;
+					<button type="button" onclick="categoryMainSliding('용품')"><span>용품</span></button>
 				</nav>
 
 				<!-- 중분류: 주식캔, 어덜트, 키튼, 전연령, 파우치, 건식사료 등 -->
-				<nav id="category-sub">
+				<!-- TODO: 실제 구현을 다시 자세히 보니까, 1290px 짜리 커다란 div 에서 -430px 등등 이동하면서 슬라이드가 구현되었음... 다시 고치기는 일정이 빡빡해서 그냥 차후 구현하기로 함 -->
+				<div id="catogorySub" class="width1290 flex-between">
+					<nav class="category-sub-menu flex-center width430">
+						<ul class="flex-wrap-center width80per row-gap10">
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/주식캔.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">주식캔</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/어덜트.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">어덜트</p>
+								</div>
+								<div>
+									<p class="font-9 color-9ca1aa bold">(1-7세)</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/키튼.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">키튼</p>
+								</div>
+								<div>
+									<p class="font-9 color-9ca1aa bold">(1세미만)</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/전연령.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">전연령</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/파우치.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">파우치</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/건식사료.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">건식사료</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/에어동결사료.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">에어/동결사료</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/더보기.jpg">
+								</div>
+								<div>
+									<p class="font-11 bold">더보기</p>
+								</div>
+							</li>
+						</ul>
+					</nav>
 
-				</nav>
+					<nav class="category-sub-menu flex-center width430 inline">
+						<ul class="flex-wrap-center width80per row-gap10">
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/간식파우치.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">간식 파우치</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/동결건조.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">동결/건조</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/영양기능.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">영양/기능</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/간식캔.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">간식캔</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/저키.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">저키</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/덴탈간식.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">덴탈간식</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/스낵.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">스낵</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/더보기.jpg">
+								</div>
+								<div>
+									<p class="font-11 bold">더보기</p>
+								</div>
+							</li>
+						</ul>
+					</nav>
+
+					<nav class="category-sub-menu flex-center width430 inline">
+						<ul class="flex-wrap-center width80per row-gap10">
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/낚시대레이져.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">낚시대/레이져</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/스크래쳐박스.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">스크래쳐/박스</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/모래.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">모래</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/터널사냥본능.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">터널/사냥본능</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/캣타워캣휠.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">캣타워/캣휠</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/화장실배변보조.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">화장실/배변보조</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/공인형.svg">
+								</div>
+								<div>
+									<p class="font-11 bold">공/인형</p>
+								</div>
+							</li>
+							<li>
+								<div>
+									<img src="../resources/images/main/icons/main/더보기.jpg">
+								</div>
+								<div>
+									<p class="font-11 bold">더보기</p>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<!-- 구분선 -->
+				<br>
+				<div class="flex-center padtop10">
+					<div class="divider"></div>
+				</div>
+				<br>
+
+				<!-- 육아질문, 사냥놀이, 수의사 상담 -->
+				<ul id="category-ul-qna" class="flex-center column-gap8">
+					<li><a href="#"><img src="../resources/images/main/icons/main/육아질문.png"></a></li>
+					<li><a href="#"><img src="../resources/images/main/icons/main/사냥놀이.png"></a></li>
+					<li><a href="#"><img src="../resources/images/main/icons/main/수의사상담.png"></a></li>
+				</ul>
 			</section>
-
 		</main>
 	</div>
 
