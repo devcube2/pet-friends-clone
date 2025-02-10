@@ -3,11 +3,11 @@
     Width
     =================================
 */
+.width81 {
+    width: 81px;
+}
 .width84 {
     width: 84px;
-}
-.width375 {
-    width: 400px;
 }
 
 .width400 {
@@ -61,6 +61,12 @@
     justify-content: center;
 }
 
+.flex-center-gap50 {
+    display: flex;
+    justify-content: center;
+    column-gap: 40px; /* 가로 간격 */
+}
+
 .hidden {
     overflow: hidden;
 }
@@ -95,6 +101,10 @@
 
 .pad10-0 {
     padding: 10px 0px;
+}
+
+.pad0-10 {
+    padding: 0px 10px;
 }
 
 .pad7-16 {
@@ -200,6 +210,11 @@
     top: 2px;
 }
 
+.icon24x24-nopos {
+    width: 24px;
+    height: 24px;
+}
+
 /*
     =================================
     Background
@@ -248,6 +263,18 @@
     top: 2px;
 }
 
+.position-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.pos-left7 {
+    position: relative;
+    left: 7px;
+}
+
 /*
     =================================
     Gap
@@ -259,4 +286,8 @@
 
 .column-gap8 {
     column-gap: 8px;
+}
+
+.text-center {
+    text-align: center;
 }

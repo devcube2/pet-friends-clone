@@ -25,7 +25,7 @@ body {
 
 /* 이미지 슬라이드 */
 .slider-container {
-    width: 429px;
+    width: 428px;
     height: 230px;
     overflow: hidden;
     position: relative;
@@ -173,3 +173,9 @@ body {
 #category-main>button {
     cursor: pointer;
 }
+
+/*
+    =================================
+    Footer
+    =================================
+*/
