@@ -99,6 +99,10 @@
     padding: 5px 10px 8px;
 }
 
+.pad5-0 {
+    padding: 5px 0px;
+}
+
 .pad10-0 {
     padding: 10px 0px;
 }
@@ -111,6 +115,14 @@
     padding: 7px 16px;
 }
 
+.pad32-16 {
+    padding: 32px 16px;
+}
+
+.pad12-16 {
+    padding: 12px 16px;
+}
+
 /*
     =================================
     Margin
@@ -119,6 +131,14 @@
 .margin25 {
     margin: 25px;
 }
+
+.margin8-0 {
+    margin: 8px 0px;
+}
+
+/* .margin24-16-16 {
+    margin: 24px 16px 16px;
+} */
 
 /*
     =================================
@@ -132,6 +152,10 @@
 
 .font-13 {
     font-size: 13px;
+}
+
+.font-12 {
+    font-size: 12px;
 }
 
 .font-11 {
@@ -150,6 +174,10 @@
     font-weight: bold;
 }
 
+.contrast150 {
+    filter: contrast(150%);
+}
+
 /*
     =================================
     Color
@@ -157,6 +185,10 @@
 */
 .color-white {
     color: white;
+}
+
+.color-blue {
+    color: blue;
 }
 
 .color-c6c9ce {
@@ -224,11 +256,8 @@
     background-color: white;
 }
 
-.underline {
-    display: inline-block;
-    border-bottom: 2px solid red;
-    /* 글자와 밑줄 사이 간격 조절 */
-    padding-bottom: 5px;
+.bg-fafafa {
+    background-color: #fafafa;
 }
 
 /*
@@ -263,16 +292,35 @@
     top: 2px;
 }
 
-.position-sticky {
+.pos-bottom1 {
+    position: relative;
+    bottom: 1px;
+}
+
+.pos-left7 {
+    position: relative;
+    left: 7px;
+}
+
+.position-top-sticky {
     position: sticky;
     top: 0;
     z-index: 1000;
     background-color: white;
 }
 
-.pos-left7 {
-    position: relative;
-    left: 7px;
+.position-top-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: white;
+}
+
+.position-bottom-sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 1000;
+    background-color: white;
 }
 
 /*
@@ -288,6 +336,27 @@
     column-gap: 8px;
 }
 
+.column-gap15 {
+    column-gap: 15px;
+}
+
+.column-gap25 {
+    column-gap: 25px;
+}
+
 .text-center {
     text-align: center;
+}
+
+/*
+    =================================
+    Decoration
+    =================================
+*/
+.underline {
+    text-decoration: underline;
+}
+
+.contrast200 {
+    filter: contrast(200%);
 }

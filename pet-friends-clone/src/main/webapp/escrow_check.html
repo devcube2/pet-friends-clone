@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)https://partner.kcp.co.kr/escrow/popup?site_cd=IP05Z -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>에스크로 서비스 가입사실 확인하기</title>
+    <style>
+        /* fonts */
+        @font-face{
+            font-family:'Pretendard';
+            font-style:normal;
+            font-weight:300;
+            src:url(/assets/kcp/css/font/PretendardLight.woff2) format('woff2');
+        }
+        @font-face{
+            font-family:'Pretendard';
+            font-style:normal;
+            font-weight:400;
+            src:url(/assets/kcp/css/font/PretendardRegular.woff2) format('woff2');
+        }
+        @font-face{
+            font-family:'Pretendard';
+            font-style:normal;
+            font-weight:500;
+            src:url(/assets/kcp/css/font/PretendardMedium.woff2) format('woff2');
+        }
+        @font-face{
+            font-family:'Pretendard';
+            font-style:normal;
+            font-weight:600;
+            src:url(/assets/kcp/css/font/PretendardSemiBold.woff2) format('woff2');
+        }
+        @font-face{
+            font-family:'Pretendard';
+            font-style:normal;
+            font-weight:700;
+            src:url(/assets/kcp/css/font/PretendardBold.woff2) format('woff2');
+        }
+        /* reset */
+        html, body, div, span, applet, object, iframe,h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,	b, u, i, center,dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+        time, mark, audio, video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            vertical-align: baseline;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "pretendard", sans-serif;
+            font-size: 13px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: #282C2E;
+        }
+        ol, ul {
+            list-style: none;
+        }
+        blockquote, q {
+            quotes: none;
+        }
+        blockquote:before, blockquote:after,
+        q:before, q:after {
+            content: '';
+            content: none;
+        }
+        strong {
+            font-weight: 600;
+        }
+        /* layout */
+        .wrap-certificate {
+            position: relative;
+            margin: auto;
+            padding: 80px 24px 30px;
+            width: 100%;
+            min-width: 360px;
+            max-width: 500px;
+        }
+        #header {
+            position: relative;
+            margin-bottom: 24px;
+        }
+        #header h1 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #main .card-section {
+            border: 1px solid #E2E8EE;
+            border-radius: 8px;
+            background-color: #fff;
+        }
+        #main .card-section .mark-area {
+            padding: 30px 24px;
+            text-align: center;
+        }
+        #main .card-section .mark-area .mark img {
+            width: 64px;
+        }
+        #main .card-section .mark-area .text {
+            margin-top: 24px;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+        }
+        #main .card-section .store-info-area {
+            padding: 24px;
+            background-color: #F7F9FC;
+        }
+        .store-info-area .list-type-table .ellipsis {
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            word-break: break-all;
+        }
+        .store-info-area .list-type-table li {
+            overflow: hidden;
+            margin-top: 12px;
+        }
+        .store-info-area .list-type-table li:first-of-type {
+            margin-top: 0;
+        }
+        .list-type-table .dt {
+            float: left;
+            width: 42%;
+            color: #4A5056;
+            white-space: nowrap;
+        }
+        .list-type-table .dd {
+            float: right;
+            width: 58%;
+            font-weight: 600;
+            text-align: right;
+            word-break: break-all;
+        }
+        #footer {
+            margin-top: 24px;
+        }
+        #footer .logo {
+            line-height: 0;
+        }
+        #footer .logo img {
+            width: 72px;
+        }
+        #footer .text {
+            margin-top: 11px;
+            font-size: 11px;
+            font-weight: 400;
+            color: #A1A8AE;
+        }
+        .wrap-certificate .btn-close {
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            padding: 0;
+            width: 24px;
+            height: 24px;
+            font-size: 0;
+            border: 0;
+            background: transparent url(/assets/kcp/img/escrow/icon_close.png) no-repeat center / 24px ;
+            cursor: pointer;
+        }
+        @media (min-width: 500px) {
+            body {
+                font-family: "pretendard", sans-serif;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 1.4;
+                color: #282C2E;
+            }
+            .wrap-certificate {
+                padding-top: 72px;
+            }
+            #header h1 {
+                font-size: 22px;
+            }
+            #main .card-section .mark-area .mark img {
+                width: 72px;
+            }
+            #footer {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            #footer .logo img {
+                width: 96px;
+            }
+            #footer .text {
+                margin-top: 0;
+                font-size: 12px;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        function win_close() {
+            self.close();
+        }
+    </script>
+</head>
+
+<body>
+<div class="wrap-certificate">
+    <!-- header -->
+    <div id="header">
+        <h1>에스크로 서비스 가입사실 확인하기</h1>
+    </div>
+    <!-- //header -->
+
+    <!-- main content -->
+    <div id="main">
+        <div class="card-section">
+            <div class="mark-area">
+                <p class="mark"><img src="../resources/images/main/icons/footer/mark_escrow.png" alt="NHN KCP ESCROW 안전한 전자상거래"></p>
+                <p class="text">
+                    귀사는 <strong><span>2020.05.26</span></strong> 이후<br>엔에이치케이씨피 주식회사와<br>에스크로(결제대금예치) 서비스 이용약관 동의에 의거<br>서비스를 사용하고 계신 사업자 입니다.
+                </p>
+            </div>
+            <div class="store-info-area">
+                <ul class="list-type-table">
+                    <li>
+                        <span class="dt">상호</span>
+                        <span class="dd ellipsis">펫프렌즈</span>
+                    </li>
+                    <li>
+                        <span class="dt">사업자번호</span>
+                        <span class="dd">175-81-00190</span>
+                    </li>
+                    <li>
+                        <span class="dt">URL</span>
+                        <span class="dd">pet-friends.co.kr</span>
+                    </li>
+                    <li>
+                        <span class="dt">에스크로 결제수단</span>
+                        <span class="dd">계좌이체</span>
+                    </li>
+                    <li>
+                        <span class="dt">서비스 확인번호</span>
+                        <span class="dd">제 <span>A11-200526-6430</span> 호</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- //main content -->
+
+    <!-- footer -->
+    <div id="footer">
+        <p class="logo"><img src="../resources/images/main/icons/footer/logo_nhnkcp.png" alt="NHN KCP"></p>
+        <p class="text">엔에이치엔케이씨피(주)는 금융감독원에 등록된 에스크로 사업자입니다.<br>
+            결제대금예치업(에스크로) 등록번호 02-0006-00012호</p>
+    </div>
+    <!-- //footer -->
+
+    <button type="button" class="btn-close" onclick="win_close()">닫기</button>
+</div>
+
+</body></html>

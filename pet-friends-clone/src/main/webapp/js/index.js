@@ -26,7 +26,6 @@ document.addEventListener("DOMContentLoaded", function () {
  */
 function setActiveClassTag(element) {
     const listItems = document.querySelectorAll(element);
-    console.log(listItems);
     let activeItem = listItems[0]; // 첫 active 요소 지정
 
     activeItem.classList.add("active");
