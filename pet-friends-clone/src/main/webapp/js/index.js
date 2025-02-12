@@ -8,6 +8,11 @@ const images = [
     path + "17.webp", path + "18.webp", path + "19.webp", path + "20.webp"
 ];
 
+// 메인쇼핑 슬라이드 화면 구현 관련 전역변수
+let currentIndex = 0;
+const interval = 3000; // 3초 간격 이미지 슬라이드
+let rotateSlideTimerList = [];
+
 // HTML-CSS 모든 요소들이 다 로딩된 후 호출되는 이벤트
 document.addEventListener("DOMContentLoaded", function () {
     // 상단 네비게이터 메뉴 클릭시 하이라이트
@@ -80,11 +85,6 @@ function navCategoryActive() {
 /*
  *   슬라이드 화면 구현
  */
-
-// 메인쇼핑 슬라이드 화면 구현
-let currentIndex = 0;
-const interval = 3000; // 3초 간격 이미지 슬라이드
-let rotateSlideTimerList = [];
 
 // 수동 슬라이드 교체하면 빨리 넘어가는 증상이 있어서 추가
 function clearAllTimer() {
@@ -174,7 +174,6 @@ function categoryMainSliding(category) {
     }
     categoryElement.style.transition = "transform 300ms ease-out";
 }
-
 
 // 메인쇼핑 자동 슬라이드 시작
 rotateSlideTimerList.push(setTimeout(rotateSlide, interval));
