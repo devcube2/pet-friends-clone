@@ -32,6 +32,30 @@
 
 /*
     =================================
+    Height
+    =================================
+*/
+.height100per {
+    height: 100vh;
+}
+
+/*
+    =================================
+    Width & Height
+    =================================
+*/
+.w166h126 {
+    width: 166px;
+    height: 126px;
+}
+
+.w130h32 {
+    width: 130px;
+    height: 32px;
+}
+
+/*
+    =================================
     Display
     =================================
 */
@@ -42,6 +66,13 @@
 
 .flex-center-align {
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-between-align {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -70,6 +101,10 @@
 .hidden {
     overflow: hidden;
 }
+
+/* .display-hidden {
+    visibility: hidden;
+} */
 
 /*
     =================================
@@ -123,6 +158,22 @@
     padding: 12px 16px;
 }
 
+.pad16-16 {
+    padding: 16px 16px;
+}
+
+.pad8 {
+    padding: 8px;
+}
+
+.pad10 {
+    padding: 12px;
+}
+
+.pad20-16-0 {
+    padding: 20px 16px 0px;
+}
+
 /*
     =================================
     Margin
@@ -136,11 +187,39 @@
     margin: 8px 0px;
 }
 
+.margin-bottom5 {
+    margin-bottom: 12px;
+}
+
+.margin-bottom12 {
+    margin-bottom: 12px;
+}
+
+.margin-bottom18 {
+    margin-bottom: 18px;
+}
+
+.margin-top10 {
+    margin-top: 10px;
+}
+
+.margin-top25 {
+    margin-top: 25px;
+}
+
 /*
     =================================
     Font
     =================================
 */
+.font-16 {
+    font-size: 16px;
+}
+
+.font-14 {
+    font-size: 14px;
+}
+
 .font-bold13 {
     font-size: 13px;
     font-weight: bold;
@@ -180,7 +259,7 @@
     =================================
 */
 .color-white {
-    color: white;
+    color: white !important;
 }
 
 .color-blue {
@@ -199,6 +278,14 @@
     color: #9ca1aa;
 }
 
+.color-191919 {
+    color: #191919;
+}
+
+.color-2d3035 {
+    color: #2d3035;
+}
+
 /*
     =================================
     Border
@@ -211,6 +298,22 @@
 .bd-circle {
     border-radius: 20px;
     background-color: #fff1f5;
+}
+
+.bd-radius5 {
+    border-radius: 5px;
+}
+
+.bd-radius8 {
+    border-radius: 8px;
+}
+
+.bd-radius20 {
+    border-radius: 20px;
+}
+
+.bd-bottom-underline {
+    border-bottom: 1.3px solid #2d3035;
 }
 
 /*
@@ -252,8 +355,24 @@
     background-color: white;
 }
 
+.bg-black {
+    background-color: black;
+}
+
 .bg-fafafa {
     background-color: #fafafa;
+}
+
+.bg-fee500 {
+    background-color: #fee500;
+}
+
+.bg-4d6dfd {
+    background-color: #4d6dfd;
+}
+
+.bg-03c75a {
+    background-color: #03c75a;
 }
 
 /*
@@ -353,6 +472,18 @@
     text-decoration: underline;
 }
 
+/*
+    =================================
+    Filter
+    =================================
+*/
 .contrast200 {
     filter: contrast(200%);
+}
+
+/* 화면상에 안쓰고 남은공간 있으면 채워주는 css */
+.fill {
+    display: grid;
+    grid-template-rows: auto 1fr; /* 첫 번째 행은 내용, 두 번째 행은 남은 높이 */
+    height: 100vh;
 }
