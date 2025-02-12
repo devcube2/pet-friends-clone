@@ -5,8 +5,7 @@ button:focus {
 }
 
 body {
-    /* background-image: url('../../resources/images/main/background/background.png'); */
-    background-image: url('/pet-friends-clone/src/main/resources/images/main/background/background.png');
+    background-image: url('../resources/images/main/background/background.png');
     /* 화면의 높이를 100%로 설정합니다. (1vh는 화면 높이의 1%) */
     height: 100vh;
     /* 배경 이미지가 화면을 꽉 채우도록 비율을 유지하며 크기를 조정합니다. */
@@ -88,15 +87,15 @@ body {
 
 /* svg icons */
 #headerSelector {
-    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header/selector.svg');
+    background-image: url('../resources/images/main/icons/header/selector.svg');
 }
 
 #headerSearchButton {
-    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header/search-button.svg');
+    background-image: url('../resources/images/main/icons/header/search-button.svg');
 }
 
 #headerShoppingCart {
-    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/header/shopping-cart.svg');
+    background-image: url('../resources/images/main/icons/header/shopping-cart.svg');
 }
 
 /* 상단 네비게이터 */
@@ -114,7 +113,7 @@ body {
 
 #nav-icon1 {
     width: 100px;
-    background-image: url('/pet-friends-clone/src/main/resources/images/main/icons/nav/nav-icon1.svg');
+    background-image: url('../resources/images/main/icons/nav/nav-icon1.svg');
 }
 
 /* 중단 네비게이터 */

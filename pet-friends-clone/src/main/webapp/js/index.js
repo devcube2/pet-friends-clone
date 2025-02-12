@@ -1,5 +1,5 @@
 // TODO: 실제 사이트에서는 이렇게 고정된 배열에 넣지 않겠지만.. 할게 많아서 그냥 고정..
-const path = '/pet-friends-clone/src/main/resources/images/rotation/';
+const path = 'resources/images/rotation/';
 const images = [
     path + "1.webp", path + "2.webp", path + "3.webp", path + "4.webp",
     path + "5.webp", path + "6.webp", path + "7.webp", path + "8.webp",
