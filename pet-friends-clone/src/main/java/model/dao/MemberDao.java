@@ -49,8 +49,10 @@ public class MemberDao {
 			count += ps.executeUpdate();			
 			count += ps1.executeUpdate();
 			
+			conn.commit();
+			
 			conn.setAutoCommit(true);
-		} catch (SQLException e) {
+		} catch (SQLException e) {			
 			log.error(">> " + e);
 			return false;
 		}
