@@ -1,0 +1,31 @@
+<configuration>
+    <!-- Define a rolling file appender -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!-- Main log file -->
+        <!--<file>/var/log/tomcat/pet-friends/pet-friends.log</file>-->
+		<file>D:\logs\pet-friends.log</file>
+        
+        <!-- Rolling policy for time-based logs -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- Log file pattern (e.g., logs/application-2025-01-28.log) -->
+            <!--<fileNamePattern>/var/log/tomcat/pet-friends/pet-friends-%d{yyyy-MM-dd}.log</fileNamePattern>-->
+			<fileNamePattern>D:\logs\pet-friends-%d{yyyy-MM-dd}.log</fileNamePattern>
+            
+            <!-- Maximum history: keep only 7 days -->
+            <maxHistory>7</maxHistory>
+            
+            <!-- Optional: Total log file size limit -->
+            <totalSizeCap>1GB</totalSizeCap>
+        </rollingPolicy>
+        
+        <!-- Log message pattern -->
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} %M - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- Root logger configuration -->
+    <root level="info">
+        <appender-ref ref="FILE" />
+    </root>
+</configuration>

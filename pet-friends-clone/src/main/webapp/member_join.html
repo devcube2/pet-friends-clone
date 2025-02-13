@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="css/index.css">
 
     <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-
-    <script src="js/member_join.js"></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">    
 </head>
 
 <body>
@@ -37,24 +35,24 @@
             </header>
             <section class="pad20-16-0">
                 <p class="font-13 color-9ca1aa bold">이메일</p>
-                <input class="bd-inputbox-1" type="text" placeholder="example@example.com">
+                <input id="email" class="bd-inputbox-1" type="text" placeholder="example@example.com">
                 <p><br></p>
 
                 <p class="font-13 color-9ca1aa bold">비밀번호</p>
-                <input class="bd-inputbox-1" type="text" placeholder="영문/숫자/특수문자 혼합 8~20자">
-                <input class="bd-inputbox-1" type="text" placeholder="비밀번호를 한번 더 입력해주세요">
+                <input id="password" class="bd-inputbox-1" type="password" placeholder="영문/숫자/특수문자 혼합 8~20자">
+                <!-- <input class="bd-inputbox-1" type="text" placeholder="비밀번호를 한번 더 입력해주세요"> -->
 
                 <p><br></p>
                 <p class="font-13 color-9ca1aa bold">닉네임</p>
-                <input class="bd-inputbox-1" type="text" placeholder="2~16자 이내로 입력해주세요">
+                <input id="nick" class="bd-inputbox-1" type="text" placeholder="2~16자 이내로 입력해주세요">
 
                 <p><br></p>
                 <p class="font-13 color-9ca1aa bold">휴대폰 번호</p>
-                <input class="bd-inputbox-1" type="text" placeholder="'-'를 제외한 숫자만 입력해주세요">
+                <input id="phone" class="bd-inputbox-1" type="text" placeholder="'-'를 제외한 숫자만 입력해주세요">
 
                 <p><br></p>
                 <p class="font-13 color-9ca1aa bold">초대코드 입력(선택)</p>
-                <input class="bd-inputbox-1" type="text" placeholder="초대코드 입력하고 5천원 받기">
+                <input id="inviteCode" class="bd-inputbox-1" type="text" placeholder="초대코드 입력하고 5천원 받기">
 
                 <p><br></p>
                 <p><br></p>
@@ -88,9 +86,10 @@
                 <br>
                 <button id="agree-join-btn" type="button" class="width400 button-style-1">동의하고 가입하기</button>
             </section>
-
         </main>
     </div>
+    
+    <script src="js/member_join.js"></script>
 </body>
 
 </html>
