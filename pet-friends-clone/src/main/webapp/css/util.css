@@ -166,7 +166,7 @@
     padding: 8px;
 }
 
-.pad10 {
+.pad12 {
     padding: 12px;
 }
 
@@ -185,6 +185,10 @@
 
 .margin8-0 {
     margin: 8px 0px;
+}
+
+.margin10-0-12 {
+    margin: 10px 0px 12px;
 }
 
 .margin-bottom5 {
@@ -214,6 +218,10 @@
 */
 .font-16 {
     font-size: 16px;
+}
+
+.font-15 {
+    font-size: 15px;
 }
 
 .font-14 {
@@ -316,6 +324,16 @@
     border-bottom: 1.3px solid #2d3035;
 }
 
+.bd-inputbox-1 {
+    border: 1px solid #9ca1aa;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 400px;
+    opacity: 0.5;
+    padding: 20px;
+    margin-top: 10px;
+}
+
 /*
     =================================
     Icon
@@ -412,6 +430,11 @@
     bottom: 1px;
 }
 
+.pos-bottom3 {
+    position: relative;
+    bottom: 3px;
+}
+
 .pos-left7 {
     position: relative;
     left: 7px;
@@ -479,6 +502,30 @@
 */
 .contrast200 {
     filter: contrast(200%);
+}
+.opacity05 {
+    opacity: 0.5;
+}
+
+/*
+    =================================
+    Button
+    =================================
+*/
+.button-style-1 {
+    border: none;
+    border-radius: 5px;
+    padding: 15px 0px 17px;
+    font-size: 16px;
+    opacity: 0.3;
+    font-weight: bold;
+    background-color: #c6c9ce;
+}
+
+.button-style-1.active {
+    background-color: #ff4081;
+    color: white;
+    opacity: 1;
 }
 
 /* 화면상에 안쓰고 남은공간 있으면 채워주는 css */

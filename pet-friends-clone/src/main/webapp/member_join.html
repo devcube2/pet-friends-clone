@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>이메일 회원가입 | 반려동물 1등 쇼핑몰, 펫프렌즈</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <script src="js/member_join.js"></script>
+</head>
+
+<body>
+    <div class="flex-center padright50">
+        <!-- 소개 및 검색 페이지 -->
+        <aside class="width512 padtop43">
+            <div class="width400">
+                <a href="index.html">
+                    <img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
+                </a>
+            </div>
+        </aside>
+
+        <!-- 이메일 회원가입 페이지 -->
+        <main id="mainContent" class="width430 bd-weak bg-white fill">
+            <header class="flex-between pad16-16">
+                <a href="index.html"><img src="resources/images/member_join_login/left_arrow.svg"></a>
+                <strong>이메일 회원가입</strong>
+                <div>&nbsp;&nbsp;&nbsp;</div>
+            </header>
+            <section class="pad20-16-0">
+                <p class="font-13 color-9ca1aa bold">이메일</p>
+                <input class="bd-inputbox-1" type="text" placeholder="example@example.com">
+                <p><br></p>
+
+                <p class="font-13 color-9ca1aa bold">비밀번호</p>
+                <input class="bd-inputbox-1" type="text" placeholder="영문/숫자/특수문자 혼합 8~20자">
+                <input class="bd-inputbox-1" type="text" placeholder="비밀번호를 한번 더 입력해주세요">
+
+                <p><br></p>
+                <p class="font-13 color-9ca1aa bold">닉네임</p>
+                <input class="bd-inputbox-1" type="text" placeholder="2~16자 이내로 입력해주세요">
+
+                <p><br></p>
+                <p class="font-13 color-9ca1aa bold">휴대폰 번호</p>
+                <input class="bd-inputbox-1" type="text" placeholder="'-'를 제외한 숫자만 입력해주세요">
+
+                <p><br></p>
+                <p class="font-13 color-9ca1aa bold">초대코드 입력(선택)</p>
+                <input class="bd-inputbox-1" type="text" placeholder="초대코드 입력하고 5천원 받기">
+
+                <p><br></p>
+                <p><br></p>
+                <div class="terms-container">
+                    <ul>
+                        <li>
+                            <input type="checkbox" id="checkAll">
+                            <span class="font-14 bold pos-bottom3"> 약관 전체 동의</span>
+                        </li>
+                        <li>
+                            <hr class="margin10-0-12">
+                        </li>
+                        <li>
+                            <input type="checkbox" class="term">
+                            <span class="font-14 pos-bottom3">(필수) 본인은 만 14세 이상입니다</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="term">
+                            <span class="font-14 pos-bottom3">(필수) 서비스 이용약관 동의</span>
+                        </li>
+                        <li>
+                            <input type="checkbox" class="term">
+                            <span class="font-14 pos-bottom3">(필수) 개인정보 수집 및 이용 동의</span>
+                        </li>
+                    </ul>
+                    <!-- <label>
+                        <input type="checkbox" class="term"> (선택) 광고성 정보 수신 전체동의
+                    </label>
+                    <p>마케팅 정보 수집에 동의하시면, 이벤트 및 할인 혜택 안내를 누구보다 빠르게 받아보실 수 있어요!</p> -->
+                </div>
+                <br>
+                <button id="agree-join" type="button" class="width400 button-style-1">동의하고 가입하기</button>
+            </section>
+
+        </main>
+    </div>
+</body>
+
+</html>
