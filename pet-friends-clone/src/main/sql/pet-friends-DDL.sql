@@ -8,8 +8,8 @@ CREATE TABLE users (
     email         VARCHAR(128) UNIQUE NOT NULL,  -- 이메일
     nickname      VARCHAR(64)  NOT NULL,         -- 별명
     phone         VARCHAR(16)  UNIQUE NOT NULL,  -- 휴대폰 번호
-    referral_code VARCHAR(64),                   -- 추천코드(아직 사용안함)
-    address       VARCHAR(1024),                 -- 배송지 주소 목록(json)
+    referral_code VARCHAR(64),                   -- 추천코드(사용안함)
+    address       VARCHAR(4096),                 -- 배송지 주소 목록(json)
     created_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP,                            -- 계정정보 생성일
     updated_at    TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- 계정정보 변경일
 );

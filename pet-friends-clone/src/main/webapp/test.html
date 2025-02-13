@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>도로명 주소 검색</title>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<body>
+    <button onclick="openAddressSearch()">주소 검색</button>
+    <input type="text" id="roadAddress" placeholder="도로명 주소">
+    <input type="text" id="jibunAddress" placeholder="지번 주소">
+    <input type="text" id="zonecode" placeholder="우편번호">
+
+    <script>
+        function openAddressSearch() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    document.getElementById("roadAddress").value = data.roadAddress;   // 도로명 주소
+                    document.getElementById("jibunAddress").value = data.jibunAddress; // 지번 주소
+                    document.getElementById("zonecode").value = data.zonecode;         // 우편번호
+                }
+            }).open();
+        }
+    </script>
+</body>
+</html>
