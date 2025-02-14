@@ -3,15 +3,15 @@ const getMemberDto = () => {
 	let password = document.querySelector('#password').value;
 	let nick = document.querySelector('#nick').value;
 	let phone = document.querySelector('#phone').value;
-	let inviteCode = document.querySelector('#inviteCode').value;	
-	
+	let inviteCode = document.querySelector('#inviteCode').value;
+
 	return {
 		'email': email,
 		'password': password,
 		'nick': nick,
 		'phone': phone,
-		'inviteCode': inviteCode		
-	}	
+		'inviteCode': inviteCode
+	}
 }
 
 async function memberJoin() {
@@ -27,10 +27,10 @@ async function memberJoin() {
 		const response = await fetch('/pet-friends-clone/member', option);
 		const result = await response.json();
 		if (result == true) {
-			alert('회원등록이 완료 되었습니다.');
+			alert('회원등록 성공');
 			location.href = 'index.html';
 		} else {
-			alert('회원등록 실패');			
+			alert('회원등록 실패');
 		}
 	} catch (error) {
 		console.error('error:', error);
