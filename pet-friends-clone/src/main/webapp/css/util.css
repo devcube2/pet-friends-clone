@@ -425,6 +425,11 @@
     top: 2px;
 }
 
+.pos-top3 {
+    position: relative;
+    top: 3px;
+}
+
 .pos-bottom1 {
     position: relative;
     bottom: 1px;

@@ -1,4 +1,6 @@
-import {setLoginToken} from './auth.js';
+function setLoginToken(userDto) {
+	sessionStorage.setItem("loginToken", JSON.stringify(userDto));
+}
 
 const getMemberDto = () => {
 	let email = document.querySelector('#email').value;

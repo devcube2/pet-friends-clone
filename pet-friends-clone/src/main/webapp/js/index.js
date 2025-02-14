@@ -1,5 +1,3 @@
-import {getLoginToken} from './auth.js';
-
 // TODO: 실제 사이트에서는 이렇게 고정된 배열에 넣지 않겠지만.. 할게 많아서 그냥 고정..
 const path = 'resources/images/rotation/';
 const images = [
@@ -15,6 +13,10 @@ let currentIndex = 0;
 const interval = 3000; // 3초 간격 이미지 슬라이드
 let rotateSlideTimerList = [];
 
+function getLoginToken() {
+	return JSON.parse(sessionStorage.getItem("loginToken"));
+}
+
 // HTML-CSS 모든 요소들이 다 로딩된 후 호출되는 이벤트
 document.addEventListener("DOMContentLoaded", function () {
     // 상단 네비게이터 메뉴 클릭시 하이라이트
@@ -26,15 +28,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 카테고리 쇼핑 네비게이터 메뉴 클릭시 하이라이트 기능
     navCategoryActive();
-	
+
 	const dto = getLoginToken();
 	if (dto != null) {
-		console.log(dto.email);    	
+		console.log(dto.email);
 		console.log(dto.password);
 		console.log(dto.nick);
-		console.log(dto.phone);	
-		console.log(dto.inviteCode);	
-	}	
+		console.log(dto.phone);
+		console.log(dto.inviteCode);
+	}
 });
 
 /*
