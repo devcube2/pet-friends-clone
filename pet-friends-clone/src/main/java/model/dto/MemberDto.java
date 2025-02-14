@@ -1,3 +1,3 @@
 package model.dto;
 
-public record MemberDto(String email, String password, String nick, String phone,String inviteCode) {}
+public record MemberDto(String email, String password, String nick, String phone, String referralCode, String address) {}

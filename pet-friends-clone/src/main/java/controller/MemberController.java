@@ -29,7 +29,7 @@ public class MemberController extends Controller {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log.info("[/member/doPost 호출]");
+		log.debug("[/member/doPost 호출]");
 
 		try {
 			ObjectMapper mapper = new ObjectMapper();

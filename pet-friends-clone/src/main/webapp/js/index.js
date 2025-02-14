@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		console.log(dto.nick);
 		console.log(dto.phone);
 		console.log(dto.inviteCode);
+		console.log(dto.address);
 	}
 });
 

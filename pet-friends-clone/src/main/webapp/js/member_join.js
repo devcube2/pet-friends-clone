@@ -7,14 +7,14 @@ const getMemberDto = () => {
 	let password = document.querySelector('#password').value;
 	let nick = document.querySelector('#nick').value;
 	let phone = document.querySelector('#phone').value;
-	let inviteCode = document.querySelector('#inviteCode').value;
+	let referralCode = document.querySelector('#referralCode').value;
 
 	return {
 		'email': email,
 		'password': password,
 		'nick': nick,
 		'phone': phone,
-		'inviteCode': inviteCode
+		'referralCode': referralCode
 	}
 }
 
