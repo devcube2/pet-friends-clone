@@ -1,11 +1,13 @@
 let activeIndex = 0;
 
+function setFooterActiveIndex(index) {
+	activeIndex = index;	
+}
+
 function footerMenuHighlight(index) {
     const footerMenuList = document.querySelectorAll('footer img');
     const footerMenuDescList = document.querySelectorAll('footer p');
-
-    if (activeIndex == index) return; // 클릭된 메뉴가 현재 활성화 메뉴와 같으면 그냥 리턴한다.
-
+    
     // 이전 활성화 이미지를 비활성화 이미지로 교체
     switch (activeIndex) {
         case 0:
@@ -19,6 +21,9 @@ function footerMenuHighlight(index) {
             break;
         case 3:
             footerMenuList[activeIndex].src = 'resources/images/main/icons/footer/검색.png';
+            break;
+		case 4:
+            footerMenuList[activeIndex].src = 'resources/images/main/icons/footer/마이펫프.png';
             break;
     }
     footerMenuDescList[activeIndex].classList.remove("active");
@@ -36,6 +41,9 @@ function footerMenuHighlight(index) {
             break;
         case 3:
             footerMenuList[index].src = 'resources/images/main/icons/footer/검색활성화.png';
+            break;
+		case 4:
+            footerMenuList[index].src = 'resources/images/main/icons/footer/마이펫프활성화.png';
             break;
     }
     footerMenuDescList[index].classList.add("active");
