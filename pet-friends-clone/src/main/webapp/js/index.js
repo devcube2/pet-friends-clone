@@ -1,3 +1,5 @@
+import {getLoginToken} from './auth.js';
+
 // TODO: 실제 사이트에서는 이렇게 고정된 배열에 넣지 않겠지만.. 할게 많아서 그냥 고정..
 const path = 'resources/images/rotation/';
 const images = [
@@ -24,6 +26,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // 카테고리 쇼핑 네비게이터 메뉴 클릭시 하이라이트 기능
     navCategoryActive();
+	
+	const dto = getLoginToken();
+	if (dto != null) {
+		console.log(dto.email);    	
+		console.log(dto.password);
+		console.log(dto.nick);
+		console.log(dto.phone);	
+		console.log(dto.inviteCode);	
+	}	
 });
 
 /*
