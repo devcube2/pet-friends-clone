@@ -1,3 +1,5 @@
+import {setLoginToken} from './auth.js';
+
 const getMemberDto = () => {
 	let email = document.querySelector('#email').value;
 	let password = document.querySelector('#password').value;
@@ -16,18 +18,20 @@ const getMemberDto = () => {
 
 async function memberJoin() {
 	try {
+		const dto = getMemberDto();
 		const option = {
 			method: 'POST',
 			headers: {
 				'content-type': 'application/json'
 			},
-			body: JSON.stringify(getMemberDto())
+			body: JSON.stringify(dto)
 		};
 
 		const response = await fetch('/pet-friends-clone/member', option);
 		const result = await response.json();
 		if (result == true) {
 			alert('회원등록 성공');
+			setLoginToken(dto);
 			location.href = 'index.html';
 		} else {
 			alert('회원등록 실패');
