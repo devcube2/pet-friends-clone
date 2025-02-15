@@ -2,42 +2,116 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
 
-    <title>펫프렌즈 | 반려동물 1등 쇼핑몰</title>
+	<title>펫프렌즈 | 반려동물 1등 쇼핑몰</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/util.css">
-    <link rel="stylesheet" href="css/index.css">
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/common.css">
+	<link rel="stylesheet" href="css/util.css">
+	<link rel="stylesheet" href="css/index.css">
 
-    <!-- favicon -->
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!-- favicon -->
+	<link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
-    <div class="flex-center padright50">
-        <!-- 소개 및 검색 페이지 -->
-        <aside class="width512 padtop43">
-            <div class="width400">
-                <a href="index.html">
-                    <img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
-                </a>
-            </div>
-        </aside>
+	<div class="flex-center padright50">
+		<!-- 소개 및 검색 페이지 -->
+		<aside class="width512 padtop43">
+			<div class="width400">
+				<a href="index.html">
+					<img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
+				</a>
+			</div>
+		</aside>
 
-        <!-- 내정보 페이지 -->
-        <main id="mainContent" class="width430 bd-weak bg-white fill">
-            <header class="flex-between pad16-16">
-                <div></div>
-                <strong>마이펫프</strong>
-                <div></div>
-            </header>
-            <section class="pad20-16-0">
-                
-            </section>
-            
-            <!-- 최하단 고정 푸터 -->
+		<!-- 내정보 페이지 -->
+		<main id="mainContent" class="width430 bd-weak bg-white">
+			<header class="flex-between pad16-16">
+				<div class="padright60"></div>
+				<strong>마이펫프</strong>
+				<div>
+					<img src="resources/images/my_info/알림.svg">&nbsp;&nbsp;
+					<img src="resources/images/my_info/장바구니.svg">
+					<div class="bg-ff4081 w20h20 bd-radius20 text-center pos-left53 pos-bottom38"><span class="color-white font-10 bold pos-bottom3">1</span></div>
+				</div>
+			</header>
+
+			<section class="pad20-16-0">
+				<ul class="flex-between">
+					<li class="font-17">
+						<p><span class="bold">토끼털</span>님과 펫프의</p>
+						<p class="pad5-0">하트시그널은 <span class="color-328c87 bold">설렘시작</span></p>
+						<p>
+							<a href="#"><span class="font-11 bold color-9ca1aa">등급별 혜택보기</span></a>
+							<img src="resources/images/my_info/right_arrow.svg" class="pos-top4">
+						</p>
+					</li>
+					<li>
+						<img src="resources/images/my_info/하트고양이.svg" class="w81h72">
+					</li>
+				</ul>
+				<br>
+
+				<div class="flex-between margin-top10">
+					<p><span class="font-15 bold">내새꾸</span></p>
+					<a href="#">
+						<p class="font-11 bold color-9ca1aa">전체보기</p>
+					</a>
+				</div>
+				<br>
+
+				<div class="bd-weak2 bd-radius16 flex-left-align-gap20 pad16">
+					<div>
+						<a href="#"><img src="resources/images/my_info/add_pet_profile.png" class="w64h64"></a>
+					</div>
+					<div>
+						<p class="font-13 color-9ca1aa lh15">심쿵팸님과 함께 사는</p>
+						<p class="font-13 color-9ca1aa lh15">아이는 어떤 친구인가요? 🤔</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="bg-f8f8f8 height10" role="separator"></div>
+
+			<br><br>
+			<section>
+				<ul class="flex-around">
+					<a href="#">
+						<li class="text-center">
+							<img src="resources/images/my_info/주문내역.svg">
+							<p class="font-11 bold">주문내역</p>
+						</li>
+					</a>
+					<a href="#">
+						<li class="text-center">
+							<p class="bold">0</p>
+							<p class="font-11 bold padtop7">구매후기</p>
+						</li>
+					</a>
+					<a href="#">
+						<li class="text-center">
+							<p class="bold">0</p>
+							<p class="font-11 bold padtop7">심쿵포인트</p>
+						</li>
+					</a>
+					<a href="#">
+						<li class="text-center">
+							<p class="bold">0</p>
+							<p class="font-11 bold padtop7">쿠폰함</p>
+						</li>
+					</a>
+				</ul>
+			</section>
+
+			<div class="bg-f8f8f8 height10" role="separator"></div>
+
+			<section class="fill">
+				<!-- 일정상 더 구현 못함 -->
+			</section>
+
+			<!-- 최하단 고정 푸터 -->
 			<footer class="position-bottom-sticky pad10-0">
 				<ul class="flex-center">
 					<li class="width81 flex-center">
@@ -72,11 +146,11 @@
 					</li>
 				</ul>
 			</footer>
-        </main>
-    </div>
-	
+		</main>
+	</div>
+
 	<script src="js/footer.js"></script>
-	<script>setFooterActiveIndex(4)</script>    
+	<script>setFooterActiveIndex(4)</script>
 </body>
 
 </html>
