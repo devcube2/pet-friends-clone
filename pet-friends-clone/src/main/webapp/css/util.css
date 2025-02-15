@@ -39,6 +39,10 @@
     height: 100vh;
 }
 
+.height10 {
+    height: 10px;
+}
+
 /*
     =================================
     Width & Height
@@ -52,6 +56,21 @@
 .w130h32 {
     width: 130px;
     height: 32px;
+}
+
+.w81h72 {
+    width: 81px;
+    height: 72px;
+}
+
+.w64h64 {
+    width: 64px;
+    height: 64px;
+}
+
+.w20h20 {
+    width: 20px;
+    height: 20px;
 }
 
 /*
@@ -98,6 +117,13 @@
     column-gap: 40px; /* 가로 간격 */
 }
 
+.flex-left-align-gap20 {
+    display: flex;
+    justify-content: left;
+    column-gap: 20px;
+    align-items: center;
+}
+
 .hidden {
     overflow: hidden;
 }
@@ -111,15 +137,24 @@
     Padding
     =================================
 */
-.padtop10 {
+.padtop7 {
+    padding-top: 7px;
+}
+
+.padtop15 {
     padding-top: 15px;
 }
+
 .padtop43 {
     padding-top: 43px;
 }
 
 .padright50 {
     padding-right: 80px;
+}
+
+.padright60 {
+    padding-right: 60px;
 }
 
 .padright10 {
@@ -170,6 +205,10 @@
     padding: 12px;
 }
 
+.pad16 {
+    padding: 16px;
+}
+
 .pad20-16-0 {
     padding: 20px 16px 0px;
 }
@@ -216,6 +255,14 @@
     Font
     =================================
 */
+.font-18 {
+    font-size: 18px;
+}
+
+.font-17 {
+    font-size: 17px;
+}
+
 .font-16 {
     font-size: 16px;
 }
@@ -261,6 +308,10 @@
     filter: contrast(150%);
 }
 
+.lh15 {
+    line-height: 1.5;
+}
+
 /*
     =================================
     Color
@@ -275,7 +326,7 @@
 }
 
 .color-c6c9ce {
-    color: #c6c9ce;
+    color: #f3f3ed;
 }
 
 .color-757c89 {
@@ -294,6 +345,10 @@
     color: #2d3035;
 }
 
+.color-328c87 {
+    color: #328c87;
+}
+
 /*
     =================================
     Border
@@ -301,6 +356,10 @@
 */
 .bd-weak {
     border: 1px solid #dbdde0;
+}
+
+.bd-weak2 {
+    border: 1px solid #f3f3ed;
 }
 
 .bd-circle {
@@ -314,6 +373,10 @@
 
 .bd-radius8 {
     border-radius: 8px;
+}
+
+.bd-radius16 {
+    border-radius: 16px;
 }
 
 .bd-radius20 {
@@ -393,6 +456,14 @@
     background-color: #03c75a;
 }
 
+.bg-f8f8f8 {
+    background-color: #f8f8f8;
+}
+
+.bg-ff4081 {
+    background-color: #ff4081;
+}
+
 /*
     =================================
     Transform
@@ -430,6 +501,11 @@
     top: 3px;
 }
 
+.pos-top4 {
+    position: relative;
+    top: 4px;
+}
+
 .pos-bottom1 {
     position: relative;
     bottom: 1px;
@@ -440,9 +516,19 @@
     bottom: 3px;
 }
 
+.pos-bottom38 {
+    position: relative;
+    bottom: 38px;
+}
+
 .pos-left7 {
     position: relative;
     left: 7px;
+}
+
+.pos-left53 {
+    position: relative;
+    left: 53px;
 }
 
 .position-top-sticky {
