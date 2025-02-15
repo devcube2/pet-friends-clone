@@ -6,8 +6,13 @@
 .width81 {
     width: 81px;
 }
+
 .width84 {
     width: 84px;
+}
+
+.width190 {
+    width: 190px;
 }
 
 .width400 {
@@ -73,6 +78,16 @@
     height: 20px;
 }
 
+.w190h190 {
+    width: 190px;
+    height: 190px;
+}
+
+.w62h16 {
+    width: 62px;
+    height: 16px;
+}
+
 /*
     =================================
     Display
@@ -98,6 +113,12 @@
 .flex-between {
     display: flex;
     justify-content: space-between;
+}
+
+.flex-between-wrap {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .flex-around {
@@ -137,6 +158,10 @@
     Padding
     =================================
 */
+.padtop5 {
+    padding-top: 5px;
+}
+
 .padtop7 {
     padding-top: 7px;
 }
@@ -167,6 +192,10 @@
 
 .pad5-10-8 {
     padding: 5px 10px 8px;
+}
+
+.pad3-0 {
+    padding: 3px 0px;
 }
 
 .pad5-0 {
@@ -211,6 +240,10 @@
 
 .pad20-16-0 {
     padding: 20px 16px 0px;
+}
+
+.pad5-0-2 {
+    padding: 5px 0px 2px;
 }
 
 /*
@@ -312,6 +345,10 @@
     line-height: 1.5;
 }
 
+.letter-minus1 {
+    letter-spacing: -1px; /* 자간을 1px 줄임 */
+}
+
 /*
     =================================
     Color
@@ -373,6 +410,10 @@
 
 .bd-radius8 {
     border-radius: 8px;
+}
+
+.bd-radius12 {
+    border-radius: 12px;
 }
 
 .bd-radius16 {
@@ -491,6 +532,11 @@
     Position
     =================================
 */
+.pos-top1 {
+    position: relative;
+    top: 1px;
+}
+
 .pos-top2 {
     position: relative;
     top: 2px;

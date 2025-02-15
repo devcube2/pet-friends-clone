@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>반려동물 1등 쇼핑몰, 펫프렌즈</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="flex-center padright50">
+        <!-- 소개 및 검색 페이지 -->
+        <aside class="width512 padtop43">
+            <div class="width400">
+                <a href="index.html">
+                    <img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
+                </a>
+            </div>
+        </aside>
+
+        <!-- 상품 리스트 페이지 -->
+        <main id="mainContent" class="width430 bd-weak bg-white fill">
+            <header class="flex-between pad16-16">
+                <a href="#" onclick="javascript:history.back()"><img src="resources/images/member_join_login/left_arrow.svg"></a>
+                <strong>주식캔</strong>
+                <div>&nbsp;&nbsp;&nbsp;</div>
+            </header>
+            <section class="pad20-16-0">
+                <p class="font-13"><strong>2개</strong>의 상품</p>
+                <br>
+                <ul id="product-list" class="flex-between-wrap">
+                    <!-- 자바스크립트가 생성 -->
+                </ul>
+            </section>
+
+            <!-- 최하단 고정 푸터 -->
+			<footer class="position-bottom-sticky pad10-0">
+				<ul class="flex-center">
+					<li class="width81 flex-center">
+						<a href="index.html" class="text-center" onclick="javascript:footerMenuHighlight(0)">
+							<img src="resources/images/main/icons/footer/홈.png" class="icon24x24">
+							<p class="font-10 bold">홈</p>
+						</a>
+					</li>
+					<li class="width81 flex-center">
+						<a href="#" class="text-center" onclick="javascript:footerMenuHighlight(1)">
+							<img src="resources/images/main/icons/footer/카테고리활성화.png" class="icon24x24">
+							<p class="font-10 bold active">카테고리</p>
+						</a>
+					</li>
+					<li class="width81 flex-center">
+						<a href="#" class="text-center" onclick="javascript:footerMenuHighlight(2)">
+							<img src="resources/images/main/icons/footer/집사생활.png" class="icon24x24">
+							<p class="font-10 bold">집사생활</p>
+						</a>
+					</li>
+					<li class="width81 flex-center">
+						<a href="#" class="text-center" onclick="javascript:footerMenuHighlight(3)">
+							<img src="resources/images/main/icons/footer/검색.png" class="icon24x24">
+							<p class="font-10 bold">검색</p>
+						</a>
+					</li>
+					<li class="width81 flex-center">
+						<a href="my_info.html" class="text-center" onclick="javascript:footerMenuHighlight(4)">
+							<img src="resources/images/main/icons/footer/마이펫프.png" class="icon24x24">
+							<p class="font-10 bold">마이펫프</p>
+						</a>
+					</li>
+				</ul>
+			</footer>
+        </main>
+    </div>
+
+    <script src="js/product_list.js"></script>
+    <script src="js/footer.js"></script>
+	<script>setFooterActiveIndex(1)</script>
+</body>
+
+</html>
