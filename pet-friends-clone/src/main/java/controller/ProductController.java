@@ -28,12 +28,18 @@ public class ProductController extends Controller {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log.debug("[/product/list/doGet 호출]");
+		log.info("[/product/list/doGet 호출]");
 
 		try {
 			String petType = req.getParameter("petType");			
 			String petCareItemCategory1 = req.getParameter("petCareItemCategory1");
-			int petCareItemCategory2 = Integer.parseInt(req.getParameter("petCareItemCategory2"));
+			String petCareItemCategory2s = req.getParameter("petCareItemCategory2");
+			if (petType == null || petCareItemCategory1 == null || petCareItemCategory2s == null) {
+				sendBadRequestError(resp, "QueryString Argument is NULL", "petType or petCareItemCategory1 or petCareItemCategory2");
+				return;
+			}
+			
+			int petCareItemCategory2 = Integer.parseInt(petCareItemCategory2s);
 
 			ArrayList<ProductDto> list = ProductDao.getInstance().getProductList(new ProductDto(petType, petCareItemCategory1, petCareItemCategory2));
 			

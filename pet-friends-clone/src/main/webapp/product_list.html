@@ -13,6 +13,8 @@
 
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <script src="js/product_list.js" defer></script>
 </head>
 
 <body>
@@ -34,7 +36,7 @@
                 <div>&nbsp;&nbsp;&nbsp;</div>
             </header>
             <section class="pad20-16-0">
-                <p class="font-13"><strong>2개</strong>의 상품</p>
+                <p class="font-13"><strong id="product-list-count"><!-- 자바스크립트가 생성 --></strong>의 상품</p>
                 <br>
                 <ul id="product-list" class="flex-between-wrap">
                     <!-- 자바스크립트가 생성 -->
@@ -79,9 +81,8 @@
         </main>
     </div>
 
-    <script src="js/product_list.js"></script>
     <script src="js/footer.js"></script>
-	<script>setFooterActiveIndex(1)</script>
+	<script>setFooterActiveIndex(1)</script>	
 </body>
 
 </html>

@@ -39,6 +39,11 @@ public class Controller extends HttpServlet {
 		ErrorResponseDto dto = new ErrorResponseDto(401, "Unauthorized", errorMsg, errorMsgDetail);
 		sendError(response, dto);
 	}
+	
+	protected void sendBadRequestError(HttpServletResponse response, String errorMsg, Object errorMsgDetail) throws IOException {
+		ErrorResponseDto dto = new ErrorResponseDto(400, "Bad Request", errorMsg, errorMsgDetail);
+		sendError(response, dto);
+	}
 
 	private void sendError(HttpServletResponse response, ErrorResponseDto dto) throws IOException {
 		// 응답 상태 코드 설정

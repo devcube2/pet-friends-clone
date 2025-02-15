@@ -30,13 +30,8 @@ public class ProductDao {
 	public ArrayList<ProductDto> getProductList(ProductDto dto) {
 		ArrayList<ProductDto> list = new ArrayList<>();
 
-		String sql = "SELECT p.name AS product_name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, c.name AS pet_care_item_category2_name, attributes, stock_quantity, discount, contents FROM products AS p JOIN categories AS c ON p.pet_care_item_category2 = c.id WHERE pet_type_category = ? AND pet_care_item_category1 = ? AND pet_care_item_category2 = ?";
+		String sql = "SELECT p.id AS product_id, p.name AS product_name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, c.name AS pet_care_item_category2_name, attributes, stock_quantity, discount, contents FROM products AS p JOIN categories AS c ON p.pet_care_item_category2 = c.id WHERE pet_type_category = ? AND pet_care_item_category1 = ? AND pet_care_item_category2 = ?";
 		
-		System.out.println(dto.getPetType());
-		System.out.println(dto.getPetCareItemCategory1());
-		System.out.println(dto.getPetCareItemCategory2());
-		System.out.println(sql);
-
 		try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql);) {
 			ps.setString(1, dto.getPetType());
 			ps.setString(2, dto.getPetCareItemCategory1());
@@ -44,7 +39,7 @@ public class ProductDao {
 
 			try (ResultSet rs = ps.executeQuery()) {
 				while (rs.next()) {
-					System.out.println("next...");
+					int id = rs.getInt("product_id");
 					String name = rs.getString("product_name");
 					int price = rs.getInt("price");
 					String petType = rs.getString("pet_type_category");
@@ -56,10 +51,8 @@ public class ProductDao {
 					int discount = rs.getInt("discount");
 					String contents = rs.getString("contents");
 					
-					ProductDto inputDto = new ProductDto(name, price, petType, petCareItemCategory1, petCareItemCategory2, petCareItemCategory2s, attributes, stockQuantity, discount, contents);
+					ProductDto inputDto = new ProductDto(id, name, price, petType, petCareItemCategory1, petCareItemCategory2, petCareItemCategory2s, attributes, stockQuantity, discount, contents);
 					
-					System.out.println(inputDto.toString());
-
 					list.add(inputDto);
 				}
 			}

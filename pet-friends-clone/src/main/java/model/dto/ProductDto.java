@@ -4,6 +4,7 @@ import lombok.Data;
 
 @Data
 public class ProductDto {
+	private int id;
 	private String name;
 	private int price;
 	private String petType;
@@ -15,7 +16,8 @@ public class ProductDto {
 	private int discount;
 	private String contents;
 	
-	public ProductDto(String name, int price, String petType, String petCareItemCategory1, int petCareItemCategory2, String petCareItemCategory2s, String attributes, int stockQuantity, int discount, String contents) {
+	public ProductDto(int id, String name, int price, String petType, String petCareItemCategory1, int petCareItemCategory2, String petCareItemCategory2s, String attributes, int stockQuantity, int discount, String contents) {
+		setId(id);
 		setName(name);
 		setPrice(price);
 		setPetType(petType);
