@@ -5,14 +5,13 @@ function getLoginToken() {
 
 function displayLoginAddress() {
 	const result = document.getElementById("result");
-	
+
 	const dto = getLoginToken();
 	const address = JSON.parse(dto.address).addr
 	result.innerHTML = `
 		<p class="font-13 bold color-757c89">최근 주소지</p>
 		<br>
 		<div>
-			
 			<span>기본배송지</span>
 		</div>
 		<p>${address}</p>
