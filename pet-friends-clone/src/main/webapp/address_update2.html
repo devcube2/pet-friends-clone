@@ -15,8 +15,17 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
     <!-- kakao map api -->
-    <script
-        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c635973230c699ccfe0874aecb643939&libraries=services"></script>
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c635973230c699ccfe0874aecb643939&libraries=services"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("address-detail").addEventListener("keydown", function (event) {
+                if (event.key === "Enter") { // 또는 event.keyCode === 13 (구형 브라우저)
+                	resistAddress(); // 등록 실행
+                }
+            });
+        });
+    </script>
 </head>
 
 <body>

@@ -106,4 +106,23 @@ public class MemberDao {
 
 		return true;
 	}
+	
+	public String getMemberAddress(String email) {
+		String sql = "SELECT address FROM users WHERE email = ?";
+
+		try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, email);
+
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					return rs.getString("address");
+				}
+			}
+		} catch (SQLException e) {
+			log.error(">> " + e);
+			return null;
+		}
+
+		return null;
+	}
 }

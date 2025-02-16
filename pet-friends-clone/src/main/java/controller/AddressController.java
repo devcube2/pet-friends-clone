@@ -26,6 +26,27 @@ public class AddressController extends Controller {
 			log.error(e.getMessage());
 		}
 	}
+	
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.info("[/member/address/doGet 호출]");
+
+		try {
+			String email = req.getParameter("email");		
+			
+			if (email == null) {
+				sendBadRequestError(resp, "QueryString Argument is NULL", "email is NULL");
+				return;
+			}
+			
+			String addreses = MemberDao.getInstance().getMemberAddress(email);
+			
+			send(resp, addreses);
+		} catch (Exception e) {
+			log.error(e.getMessage());
+			sendInternalError(resp, "Error", e.getMessage());
+		}
+	}
 
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -34,8 +55,6 @@ public class AddressController extends Controller {
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			MemberDto dto = mapper.readValue(req.getReader(), MemberDto.class);
-			
-			System.out.println(dto.toString());
 			
 			boolean result = MemberDao.getInstance().updateMemberAddress(dto);
 			if (!result) {

@@ -30,22 +30,22 @@ document.addEventListener("DOMContentLoaded", function () {
     // 카테고리 쇼핑 네비게이터 메뉴 클릭시 하이라이트 기능
     navCategoryActive();
 
-	// 로그인 상태에 따라서 푸터 HTML 교체
+	
 	const loginElement = document.getElementById("login-join");
+	const addressDisplayElement = document.getElementById("address-display");
+	
+	// 로그인 상태에 따라서 HTML 교체
 	const dto = getLoginToken();
-	if (dto != null) {
-		//console.log(dto.email);
-		//console.log(dto.password);
-		//console.log(dto.nick);
-		//console.log(dto.phone);
-		//console.log(dto.inviteCode);
-		//console.log(dto.address);
+	if (dto != null) {		
 		loginElement.innerHTML = `
 			<a href="my_info.html" class="text-center" onclick="javascript:footerMenuHighlight(4)">
 				<img src="resources/images/main/icons/footer/마이펫프.png" class="icon24x24">
 				<p class="font-10 bold">마이펫프</p>
 			</a>
 		`;
+		// JSON 문자열을 JS 객체로 바꿔주고 split 처리 
+		const addrSplit = JSON.parse(dto.address).addr.split(" ");
+		addressDisplayElement.innerHTML = `<a href="#" onclick="javascript:resistAddress()">${addrSplit[0]} ${addrSplit[1]}</a>`;
 	} else {
 		loginElement.innerHTML = `
 			<a href="login.html" class="text-center">
@@ -53,7 +53,8 @@ document.addEventListener("DOMContentLoaded", function () {
 				<p class="font-10 bold">로그인/가입</p>
 			</a>
 		`;
-	}
+		addressDisplayElement.innerHTML = '<a href="#" onclick="javascript:resistAddress()">배송지 입력</a>';
+	}	 
 });
 
 /*

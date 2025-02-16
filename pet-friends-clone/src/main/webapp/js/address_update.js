@@ -3,6 +3,22 @@ function getLoginToken() {
 	return JSON.parse(sessionStorage.getItem("loginToken"));
 }
 
+function displayLoginAddress() {
+	const result = document.getElementById("result");
+	
+	const dto = getLoginToken();
+	const address = JSON.parse(dto.address).addr
+	result.innerHTML = `
+		<p class="font-13 bold color-757c89">최근 주소지</p>
+		<br>
+		<div>
+			
+			<span>기본배송지</span>
+		</div>
+		<p>${address}</p>
+	`
+}
+
 async function searchAddress() {
     const keyword = document.getElementById("keyword").value;
     const result = document.getElementById("result");
@@ -143,11 +159,9 @@ async function resistAddress() {
 
     try {
 		const dto = getLoginToken();
-        dto.address = newAddress;
+        dto.address = JSON.stringify(newAddress);
 
-        console.log(JSON.stringify(dto));
-
-		const option = {
+        const option = {
 			method: 'PUT',
 			headers: {
 				'content-type': 'application/json'
