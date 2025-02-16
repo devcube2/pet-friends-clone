@@ -72,8 +72,10 @@ public class MemberDao {
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
 					// password + salt 값 계산해서 암호화된 password 와 같다면 로그인 성공
-					if (CubeCrypto.getInstance().compareHash(dto.password(), rs.getString("salt"), rs.getString("password"))) {
-						return new MemberDto(dto.email(), dto.password(), rs.getString("nick"), rs.getString("phone"), rs.getString("referral_code"), rs.getString("address"));
+					if (CubeCrypto.getInstance().compareHash(dto.password(), rs.getString("salt"),
+							rs.getString("password"))) {
+						return new MemberDto(dto.email(), dto.password(), rs.getString("nick"), rs.getString("phone"),
+								rs.getString("referral_code"), rs.getString("address"));
 					}
 				}
 			}
@@ -81,7 +83,27 @@ public class MemberDao {
 			log.error(">> " + e);
 			return null;
 		}
-		
+
 		return null;
+	}
+
+	// 배송지 주소 변경
+	public boolean updateMemberAddress(MemberDto dto) {
+		String sql = "UPDATE users SET address = ? WHERE email = ?";		
+
+		try (Connection conn = getConnection(); PreparedStatement ps = conn.prepareStatement(sql)) {
+			ps.setString(1, dto.address());
+			ps.setString(2, dto.email());
+
+			int count = ps.executeUpdate();
+			if (count > 1) {
+				log.error("One or more rows have been updated: %d rows", count);
+			}			
+		} catch (SQLException e) {
+			log.error(">> " + e);
+			return false;
+		}
+
+		return true;
 	}
 }

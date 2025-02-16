@@ -15,8 +15,8 @@ import model.dao.MemberDao;
 import model.dto.MemberDto;
 
 @Slf4j
-@WebServlet("/member")
-public class MemberController extends Controller {
+@WebServlet("/member/address")
+public class AddressController extends Controller {
 	@Override
 	public void init(ServletConfig config) throws ServletException {
 		super.init();
@@ -28,14 +28,16 @@ public class MemberController extends Controller {
 	}
 
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		log.debug("[/member/doPost 호출]");
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		log.info("[/member/address/doPut 호출]");
 
 		try {
 			ObjectMapper mapper = new ObjectMapper();
 			MemberDto dto = mapper.readValue(req.getReader(), MemberDto.class);
 			
-			boolean result = MemberDao.getInstance().insertMember(dto);
+			System.out.println(dto.toString());
+			
+			boolean result = MemberDao.getInstance().updateMemberAddress(dto);
 			if (!result) {
 				sendInternalError(resp, "Database processing failed", "");
 			} else {
