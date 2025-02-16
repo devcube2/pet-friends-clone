@@ -1,6 +1,11 @@
-// 로그인된 유저정보 가져오기
+// 유저정보 가져오기
 function getLoginToken() {
 	return JSON.parse(sessionStorage.getItem("loginToken"));
+}
+
+// 유저정보 넣기
+function setLoginToken(userDto) {
+	sessionStorage.setItem("loginToken", JSON.stringify(userDto));
 }
 
 function displayLoginAddress() {
@@ -9,12 +14,20 @@ function displayLoginAddress() {
 	const dto = getLoginToken();
 	const address = JSON.parse(dto.address).addr
 	result.innerHTML = `
-		<p class="font-13 bold color-757c89">최근 주소지</p>
+		<p class="font-13 bold color-757c89 margin-top5">최근 주소지</p>
 		<br>
-		<div>
-			<span>기본배송지</span>
+		<div class="bg-fff1f5 bd-radius5 w70h18">
+			<div class="flex-left-align pos-left5">
+				<div class="display-inline">
+					<svg width="9" height="9" viewBox="0 0 12 9" fill="none"
+					    xmlns="http://www.w3.org/2000/svg" class="c-ctigpz c-ctigpz-icciPuA-css">
+					    <path d="M1.00003 3.95455L4.52944 7.5L11 1" stroke="#ea306f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+					</svg>
+				</div>
+				<span class="color-ea306f bold font-10 letter-minus1 padleft2">기본 배송지</span>
+			</div>			
 		</div>
-		<p>${address}</p>
+		<p class="bold lh15 padtop3">${address}</p>
 	`
 }
 
@@ -172,6 +185,7 @@ async function resistAddress() {
 		const result = await response.json();
 		if (result == true) {
 			alert('배송주소 등록 성공');
+			setLoginToken(dto);
 			location.href = 'index.html';
 		} else {
 			alert('배송주소 등록 실패');

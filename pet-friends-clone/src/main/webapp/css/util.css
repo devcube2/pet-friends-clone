@@ -86,6 +86,11 @@
     height: 20px;
 }
 
+.w10h9 {
+    width: 9px;
+    height: 9px;
+}
+
 .w190h190 {
     width: 190px;
     height: 190px;
@@ -98,6 +103,11 @@
 
 .w40h23 {
     width: 40px;
+    height: 18px;
+}
+
+.w70h18 {
+    width: 70px;
     height: 18px;
 }
 
@@ -168,6 +178,16 @@
     justify-content: left;
 }
 
+.flex-left-align {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.display-inline {
+	display: inline;
+}
+
 .hidden {
     overflow: hidden;
 }
@@ -181,6 +201,10 @@
     Padding
     =================================
 */
+.padtop3 {
+    padding-top: 3px;
+}
+
 .padtop5 {
     padding-top: 5px;
 }
@@ -207,6 +231,10 @@
 
 .padright10 {
     padding-right: 10px;
+}
+
+.padleft2 {
+	padding-left: 2px;
 }
 
 .pad12-15-15-25 {
@@ -251,6 +279,14 @@
 
 .pad16-16 {
     padding: 16px 16px;
+}
+
+.pad2 {
+    padding: 2px;
+}
+
+.pad4 {
+    padding: 4px;
 }
 
 .pad8 {
@@ -564,6 +600,10 @@
     background-color: #ff4081;
 }
 
+.bg-fff1f5 {
+	background-color: #fff1f5;
+}
+
 .bg-gray {
     background-color: gray;
 }
@@ -633,6 +673,11 @@
 .pos-bottom38 {
     position: relative;
     bottom: 38px;
+}
+
+.pos-left5 {
+    position: relative;
+    left: 5px;
 }
 
 .pos-left7 {
