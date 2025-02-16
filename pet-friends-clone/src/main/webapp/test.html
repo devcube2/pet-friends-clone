@@ -3,25 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도로명 주소 검색</title>
-    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <title>도로명주소 검색</title>
+    <script>
+        // **📌 Enter 키 감지 이벤트 추가**
+        document.getElementById("keyword").addEventListener("keydown", function(event) {
+            console.log(event.key);
+            if (event.key === "Enter") { // 또는 event.keyCode === 13 (구형 브라우저)
+                searchAddress(); // 검색 실행
+            }
+        });
+
+        async function searchAddress() {
+            const keyword = document.getElementById("keyword").value;
+            const resultDiv = document.getElementById("result");
+
+            if (!keyword.trim()) {
+                alert("검색어를 입력하세요.");
+                return;
+            }
+
+            const apiKey = "U01TX0FVVEgyMDI1MDIxNjE1NTM0MjExNTQ3Mjk=";
+            const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=20&keyword=${encodeURIComponent(keyword)}&resultType=json`;
+
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.results.common.errorCode != 0) {
+                    resultDiv.innerHTML = `<p>오류: ${data.results.common.errorMessage}</p>`;
+                    return;
+                }
+
+                const addresses = data.results.juso || [];
+
+                if (addresses.length === 0) {
+                    resultDiv.innerHTML = "<p>검색 결과가 없습니다.</p>";
+                    return;
+                }
+
+                resultDiv.innerHTML = "<ul>" +
+                    addresses.map(addr => `<li>${addr.roadAddr} (${addr.jibunAddr})</li>`).join("") +
+                    "</ul>";
+            } catch (error) {
+                resultDiv.innerHTML = `<p>오류 발생: ${error.message}</p>`;
+            }
+        }
+
+
+    </script>
 </head>
 <body>
-    <button onclick="openAddressSearch()">주소 검색</button>
-    <input type="text" id="roadAddress" placeholder="도로명 주소">
-    <input type="text" id="jibunAddress" placeholder="지번 주소">
-    <input type="text" id="zonecode" placeholder="우편번호">
-
-    <script>
-        function openAddressSearch() {
-            new daum.Postcode({
-                oncomplete: function(data) {
-                    document.getElementById("roadAddress").value = data.roadAddress;   // 도로명 주소
-                    document.getElementById("jibunAddress").value = data.jibunAddress; // 지번 주소
-                    document.getElementById("zonecode").value = data.zonecode;         // 우편번호
-                }
-            }).open();
-        }
-    </script>
+    <h2>도로명주소 검색</h2>
+    <input type="text" id="keyword" placeholder="도로명 또는 지번 입력">
+    <button onclick="searchAddress()">검색</button>
+    <div id="result"></div>
 </body>
 </html>

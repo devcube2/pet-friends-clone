@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>반려동물 1등 쇼핑몰, 펫프렌즈</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/util.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+
+<body>
+    <div class="flex-center padright50">
+        <!-- 소개 및 검색 페이지 -->
+        <aside class="width512 padtop43">
+            <div class="width400">
+                <a href="index.html">
+                    <img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
+                </a>
+            </div>
+        </aside>
+
+        <!-- 주소 변경 페이지 -->
+        <main id="mainContent" class="width430 bd-weak bg-white fill">
+            <header class="flex-between pad16-16">
+                <a href="#" onclick="javascript:history.back()"><img
+                        src="resources/images/member_join_login/left_arrow.svg"></a>
+                <strong>주소</strong>
+                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+            </header>
+
+            <section class="pad5-16" class="flex-between">
+                <input id="keyword" class="bd-inputbox-2" type="text" placeholder="지번, 도로명, 건물명으로 검색">
+                <div><br></div>
+
+                <div id="result" class="font-13">
+                    <!-- 자바스크립트에서 생성 -->
+                </div>
+            </section>
+
+            <footer class="flex-center margin-bottom18">
+                <button id="agree-join-btn" type="button" class="width400 button-style-2 active"
+                    onclick="searchAddress()">검색</button>
+            </footer>
+        </main>
+    </div>
+
+    <script src="js/address_update.js"></script>
+</body>
+
+</html>

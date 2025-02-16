@@ -13,6 +13,7 @@ let currentIndex = 0;
 const interval = 3000; // 3초 간격 이미지 슬라이드
 let rotateSlideTimerList = [];
 
+// 로그인된 유저정보 가져오기
 function getLoginToken() {
 	return JSON.parse(sessionStorage.getItem("loginToken"));
 }
@@ -54,6 +55,20 @@ document.addEventListener("DOMContentLoaded", function () {
 		`;
 	}
 });
+
+/*
+ *   최상단 헤더 기능 구현
+ */
+function resistAddress() {
+    const dto = getLoginToken();
+
+    if (dto) {
+        location.href = 'address_update.html';
+    } else {
+        location.href = 'login.html';
+    }
+}
+
 
 /*
  *   네비게이터 액티브 아이템 세팅 구현
