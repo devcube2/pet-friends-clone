@@ -1,9 +1,7 @@
-// Enter 키 감지 이벤트 추가
-document.getElementById("keyword").addEventListener("keydown", function (event) {
-    if (event.key === "Enter") { // 또는 event.keyCode === 13 (구형 브라우저)
-        searchAddress(); // 검색 실행
-    }
-});
+// 로그인된 유저정보 가져오기
+function getLoginToken() {
+	return JSON.parse(sessionStorage.getItem("loginToken"));
+}
 
 async function searchAddress() {
     const keyword = document.getElementById("keyword").value;
@@ -15,7 +13,7 @@ async function searchAddress() {
     }
 
     const apiKey = "U01TX0FVVEgyMDI1MDIxNjE1NTM0MjExNTQ3Mjk=";
-    const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=12&keyword=${encodeURIComponent(keyword)}&resultType=json`;
+    const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=10&keyword=${encodeURIComponent(keyword)}&resultType=json`;
 
     try {
         const response = await fetch(url);
@@ -38,31 +36,134 @@ async function searchAddress() {
             html += `
                 <div>
                     <ul>
-                        <li class="flex-left">
-                            <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
-                                <p class="font-10 bold color-626872">도로명</p>
-                            </div>
-                            <p class="pos-bottom3 bold">${addr.roadAddr}</p>
+                        <li>
+                            <a href="address_update2.html?keyword=${keyword}&roadAddr=${addr.roadAddr}&jibunAddr=${addr.jibunAddr}" class="flex-left">
+                                <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
+                                    <p class="font-10 bold color-626872">도로명</p>
+                                </div>
+                                <p class="pos-bottom3 bold">${addr.roadAddr}</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
                 <div class="margin-top5">
                     <ul>
-                        <li class="flex-left">
-                            <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
-                                <p class="font-10 bold">지번</p>
-                            </div>
-                            <p class="pos-bottom3">${addr.jibunAddr}</p>
+                        <li>
+                            <a href="address_update2.html?keyword=${keyword}&roadAddr=${addr.roadAddr}&jibunAddr=${addr.jibunAddr}" class="flex-left">
+                                <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
+                                    <p class="font-10 bold">지번</p>
+                                </div>
+                                <p class="pos-bottom3">${addr.jibunAddr}</p>
+                            </a>
                         </li>
                     </ul>
                 </div>
             `;
             if (index < addresses.length - 1) {
-                html += '<br><div class="divider"></div>';
+                html += '<div class="divider margin16-0"></div>';
             }
         });
         result.innerHTML = html;
     } catch (error) {
         result.innerHTML = `<p>오류 발생: ${error.message}</p>`;
     }
+}
+
+function displayAddress(keyword, roadAddr, jibunAddr, y, x) {
+    // 이미지 지도에 표시할 마커입니다
+    let marker = {
+        position: new kakao.maps.LatLng(y, x),
+        text: `${keyword}` // text 옵션을 설정하면 마커 위에 텍스트를 함께 표시할 수 있습니다
+    };
+
+    let staticMapContainer  = document.getElementById('kakao-map'), // 이미지 지도를 표시할 div
+        staticMapOption = {
+            center: new kakao.maps.LatLng(y, x), // 이미지 지도의 중심좌표
+            level: 3, // 이미지 지도의 확대 레벨
+            marker: marker // 이미지 지도에 표시할 마커
+        };
+
+    // 이미지 지도를 생성합니다
+    let staticMap = new kakao.maps.StaticMap(staticMapContainer, staticMapOption);
+
+    let addressContainer = document.getElementById('addressContainer');
+    addressContainer.innerHTML = `
+        <ul>
+            <li class="font-13 flex-left margin-top15">
+                <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
+                    <p class="font-10 bold color-626872">도로명</p>
+                </div>
+                <p class="pos-bottom3 bold">${roadAddr}</p>
+            </li>
+            <li class="font-13 flex-left margin-top5">
+                <div class="bg-fafafa bd-radius5 w40h23 min-width40 text-center">
+                    <p class="font-10 bold color-626872">지번</p>
+                </div>
+                <p class="pos-bottom3">${jibunAddr}</p>
+            </li>
+        </ul>
+    `;
+}
+
+// 도로명 주소로 위도, 경도 가져오기
+function getCoordinates() {
+    if (!window.kakao || !kakao.maps) {
+        alert("카카오맵 API 로드 오류");
+        return;
+    }
+
+    const params = new URLSearchParams(window.location.search);
+
+    const keyword = params.get("keyword");
+    const roadAddr = params.get("roadAddr");
+    const jibunAddr = params.get("jibunAddr");
+
+    const geocoder = new kakao.maps.services.Geocoder();
+
+    geocoder.addressSearch(roadAddr, function(result, status) {
+        if (status === kakao.maps.services.Status.OK) {
+            // const lat = result[0].y;
+            // const lng = result[0].x;
+            displayAddress(keyword, roadAddr, jibunAddr, result[0].y, result[0].x);
+        } else {
+            alert("좌표 변환에 실패했습니다. 올바른 주소인지 확인하세요.");
+        }
+    });
+}
+
+async function resistAddress() {
+    const params = new URLSearchParams(window.location.search);
+    const roadAddr = params.get("roadAddr");
+    const addressDetail = document.getElementById("address-detail").value;
+
+    const newAddress = {
+        primary: true,
+        addr: `${roadAddr} ${addressDetail}`
+    }
+
+    try {
+		const dto = getLoginToken();
+        dto.address = newAddress;
+
+        console.log(JSON.stringify(dto));
+
+		const option = {
+			method: 'PUT',
+			headers: {
+				'content-type': 'application/json'
+			},
+			body: JSON.stringify(dto)
+		};
+
+		const response = await fetch('/pet-friends-clone/member/address', option);
+		const result = await response.json();
+		if (result == true) {
+			alert('배송주소 등록 성공');
+			location.href = 'index.html';
+		} else {
+			alert('배송주소 등록 실패');
+		}
+	} catch (error) {
+		console.error('error:', error);
+	}
 }

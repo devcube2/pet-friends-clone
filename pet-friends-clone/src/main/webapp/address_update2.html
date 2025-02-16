@@ -14,15 +14,9 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("keyword").addEventListener("keydown", function (event) {
-                if (event.key === "Enter") { // 또는 event.keyCode === 13 (구형 브라우저)
-                    searchAddress(); // 검색 실행
-                }
-            });
-        });
-    </script>
+    <!-- kakao map api -->
+    <script
+        src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c635973230c699ccfe0874aecb643939&libraries=services"></script>
 </head>
 
 <body>
@@ -36,7 +30,7 @@
             </div>
         </aside>
 
-        <!-- 주소 변경 페이지 -->
+        <!-- 주소 변경 두번째 페이지 -->
         <main id="mainContent" class="width430 bd-weak bg-white fill">
             <header class="flex-between pad16-16">
                 <a href="#" onclick="javascript:history.back()"><img
@@ -46,22 +40,27 @@
             </header>
 
             <section class="pad5-16" class="flex-between">
-                <input id="keyword" class="bd-inputbox-2" type="text" placeholder="지번, 도로명, 건물명으로 검색">
-                <div><br></div>
-
-                <div id="result" class="font-13">
+                <div id="kakao-map" class="w400h210">
                     <!-- 자바스크립트에서 생성 -->
+                </div>
+                <div id="addressContainer">
+                    <!-- 자바스크립트에서 생성 -->
+                </div>
+
+                <div class="margin-top15">
+                    <input id="address-detail" class="bd-inputbox-2" type="text" placeholder="상세주소를 입력해 주세요">
                 </div>
             </section>
 
             <footer class="flex-center margin-bottom18">
                 <button id="agree-join-btn" type="button" class="width400 button-style-2 active cursor-pointer"
-                    onclick="searchAddress()">검색</button>
+                    onclick="resistAddress()">이 주소가 확실해요</button>
             </footer>
         </main>
     </div>
 
     <script src="js/address_update.js"></script>
+    <script>getCoordinates()</script>
 </body>
 
 </html>

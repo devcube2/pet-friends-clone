@@ -101,6 +101,11 @@
     height: 18px;
 }
 
+.w400h210 {
+    width: 400px;
+    height: 210px;
+}
+
 /*
     =================================
     Display
@@ -281,6 +286,10 @@
     margin: 8px 0px;
 }
 
+.margin16-0 {
+    margin: 16px 0px;
+}
+
 .margin10-0-12 {
     margin: 10px 0px 12px;
 }
@@ -303,6 +312,10 @@
 
 .margin-top10 {
     margin-top: 10px;
+}
+
+.margin-top15 {
+    margin-top: 15px;
 }
 
 .margin-top25 {
@@ -735,4 +748,10 @@
     display: grid;
     grid-template-rows: auto 1fr; /* 첫 번째 행은 내용, 두 번째 행은 남은 높이 */
     height: 100vh;
+}
+
+.divider {
+    width: 380px;
+    height: 1.5px;
+    background-color: #f8f8f8;
 }

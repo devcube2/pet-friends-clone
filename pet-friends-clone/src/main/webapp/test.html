@@ -3,59 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>도로명주소 검색</title>
+    <title>카카오맵 주소 → 좌표 변환</title>
+
+    <!-- 카카오맵 API 로드 -->
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=c635973230c699ccfe0874aecb643939&libraries=services"></script>
+</head>
+<body>
+    <h2>도로명주소를 입력하면 좌표를 가져옵니다</h2>
+    <input type="text" id="addressInput" placeholder="도로명 주소 입력">
+    <button onclick="getCoordinates()">좌표 찾기</button>
+
+    <p id="result"></p>
+
     <script>
-        // **📌 Enter 키 감지 이벤트 추가**
-        document.getElementById("keyword").addEventListener("keydown", function(event) {
-            console.log(event.key);
-            if (event.key === "Enter") { // 또는 event.keyCode === 13 (구형 브라우저)
-                searchAddress(); // 검색 실행
-            }
-        });
-
-        async function searchAddress() {
-            const keyword = document.getElementById("keyword").value;
-            const resultDiv = document.getElementById("result");
-
-            if (!keyword.trim()) {
-                alert("검색어를 입력하세요.");
+        function getCoordinates() {
+            if (!window.kakao || !kakao.maps) {
+                console.error("카카오맵 API가 로드되지 않았습니다.");
+                alert("카카오맵 API 로드 오류. 페이지를 새로고침하세요.");
                 return;
             }
 
-            const apiKey = "U01TX0FVVEgyMDI1MDIxNjE1NTM0MjExNTQ3Mjk=";
-            const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=20&keyword=${encodeURIComponent(keyword)}&resultType=json`;
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-
-                if (data.results.common.errorCode != 0) {
-                    resultDiv.innerHTML = `<p>오류: ${data.results.common.errorMessage}</p>`;
-                    return;
-                }
-
-                const addresses = data.results.juso || [];
-
-                if (addresses.length === 0) {
-                    resultDiv.innerHTML = "<p>검색 결과가 없습니다.</p>";
-                    return;
-                }
-
-                resultDiv.innerHTML = "<ul>" +
-                    addresses.map(addr => `<li>${addr.roadAddr} (${addr.jibunAddr})</li>`).join("") +
-                    "</ul>";
-            } catch (error) {
-                resultDiv.innerHTML = `<p>오류 발생: ${error.message}</p>`;
+            const address = document.getElementById("addressInput").value;
+            if (!address) {
+                alert("도로명 주소를 입력하세요.");
+                return;
             }
+
+            const geocoder = new kakao.maps.services.Geocoder();
+
+            geocoder.addressSearch(address, function(result, status) {
+                if (status === kakao.maps.services.Status.OK) {
+                    const lat = result[0].y;
+                    const lng = result[0].x;
+
+                    document.getElementById("result").innerText = `위도: ${lat}, 경도: ${lng}`;
+                    console.log(`위도: ${lat}, 경도: ${lng}`);
+                } else {
+                    alert("좌표 변환에 실패했습니다. 올바른 주소인지 확인하세요.");
+                }
+            });
         }
-
-
     </script>
-</head>
-<body>
-    <h2>도로명주소 검색</h2>
-    <input type="text" id="keyword" placeholder="도로명 또는 지번 입력">
-    <button onclick="searchAddress()">검색</button>
-    <div id="result"></div>
 </body>
 </html>
