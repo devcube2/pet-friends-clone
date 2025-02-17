@@ -19,7 +19,7 @@ const getProductList = async () => {
         dtoList.forEach(dto => {
 			html += `
                 <li class="width190 margin-bottom12">
-                    <img src="resources/images/products/${dto.petType}/${dto.petCareItemCategory1}/${dto.petCareItemCategory2s}/${dto.id}/slide/slide1.webp" class="w190h190 bd-radius12">
+                    <img src="resources/images/products/${dto.petType}/${dto.petCareItemCategory1}/${dto.petCareItemCategory2s}/${dto.id}/slide/slide1" class="w190h190 bd-radius12">
                     <p class="font-13 letter-minus1">${dto.name}</p>
                     <p class="pad5-0-2"><span class="bold">${dto.price}</span><span class="font-15 pos-bottom1">원</span></p>
                     <img src="resources/images/products/badge-morning.png" class="w62h16">
