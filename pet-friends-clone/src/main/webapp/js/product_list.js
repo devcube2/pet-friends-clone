@@ -15,7 +15,7 @@ const getProductList = async () => {
 		
 		const response = await fetch(`/pet-friends-clone/product/list?petType=${type}&petCareItemCategory1=${category1}&petCareItemCategory2=${category2}`, option);
 		const dtoList = await response.json();
-
+				
         dtoList.forEach(dto => {
 			html += `
                 <li class="width190 margin-bottom12">

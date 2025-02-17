@@ -41,7 +41,7 @@ async function searchAddress() {
     }
 
     const apiKey = "U01TX0FVVEgyMDI1MDIxNjE1NTM0MjExNTQ3Mjk=";
-    const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=10&keyword=${encodeURIComponent(keyword)}&resultType=json`;
+    const url = `https://business.juso.go.kr/addrlink/addrLinkApi.do?confmKey=${apiKey}&currentPage=1&countPerPage=8&keyword=${encodeURIComponent(keyword)}&resultType=json`;
 
     try {
         const response = await fetch(url);
