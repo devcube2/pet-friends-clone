@@ -21,9 +21,29 @@
 	<div class="flex-center padright50">
 		<!-- 소개 및 검색 페이지 -->
 		<aside class="width512 padtop43">
-			<div class="width400">
+			<div class="width400 position-sticky-top45">
 				<a href="index.html">
-					<img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">
+					<div>
+						<img id="petLeftHeaderLogo" src="resources/images/main/background/background-logo.png">						
+					</div>
+					<br><br><br><br><br><br><br>
+					<div>
+						<img class="width375" src="resources/images/main/background/background-title.png">
+					</div>
+					<br><br>
+					<div>
+						<img class="width375" src="resources/images/main/background/button-search.png">
+						<input type="text" style="pointer-events: none" placeholder="어떤 상품을 찾으시나요?" class="font-20 width250 text-center bd-none pos-bottom54 pos-left30">
+					</div>
+					<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+					<div class="flex-between">
+						<div>&nbsp;</div>
+						<img class="width180" src="resources/images/main/background/background-company-logo.png">
+					</div>
+					<div class="flex-between margin-top10">
+						<img class="w210h26" src="resources/images/main/background/background-app-download-2.png">
+						<img class="width180" src="resources/images/main/background/background-app-download-1.png">						
+					</div>					
 				</a>
 			</div>
 		</aside>
@@ -40,9 +60,10 @@
 							<div id="headerSelector" class="icon18x18"></div>
 						</div>
 						&nbsp;
-						<div class="bd-circle flex-center-align pad5-10-8">							
+						<div class="bd-circle flex-center-align pad5-10-8">
 							<span id="address-display" class="font-bold13 padright10">
 								<!-- 자바스크립트에서 생성 -->
+								<a href="#" onclick="javascript:resistAddress()">배송지 입력</a>
 							</span>
 							<div id="headerSelector" class="icon18x18"></div>
 						</div>
@@ -113,10 +134,15 @@
 						<ul class="flex-wrap-center width80per row-gap10">
 							<li>
 								<div>
-									<a href="product_list.html?petType=고양이&petCareItemCategory1=사료&petCareItemCategory2=5"><img src="resources/images/main/icons/main/주식캔.svg"></a>
+									<a
+										href="product_list.html?petType=고양이&petCareItemCategory1=사료&petCareItemCategory2=5"><img
+											src="resources/images/main/icons/main/주식캔.svg"></a>
 								</div>
 								<div>
-									<a href="product_list.html?petType=고양이&petCareItemCategory1=사료&petCareItemCategory2=5"><p class="font-11 bold">주식캔</p></a>
+									<a
+										href="product_list.html?petType=고양이&petCareItemCategory1=사료&petCareItemCategory2=5">
+										<p class="font-11 bold">주식캔</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -124,10 +150,14 @@
 									<a href="#"><img src="resources/images/main/icons/main/어덜트.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">어덜트</p></a>
+									<a href="#">
+										<p class="font-11 bold">어덜트</p>
+									</a>
 								</div>
 								<div>
-									<a href="#"><p class="font-9 color-9ca1aa bold">(1-7세)</p></a>
+									<a href="#">
+										<p class="font-9 color-9ca1aa bold">(1-7세)</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -135,10 +165,14 @@
 									<a href="#"><img src="resources/images/main/icons/main/키튼.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">키튼</p></a>
+									<a href="#">
+										<p class="font-11 bold">키튼</p>
+									</a>
 								</div>
 								<div>
-									<a href="#"><p class="font-9 color-9ca1aa bold">(1세미만)</p></a>
+									<a href="#">
+										<p class="font-9 color-9ca1aa bold">(1세미만)</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -146,7 +180,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/전연령.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">전연령</p></a>
+									<a href="#">
+										<p class="font-11 bold">전연령</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -154,7 +190,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/파우치.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">파우치</p></a>
+									<a href="#">
+										<p class="font-11 bold">파우치</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -162,7 +200,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/건식사료.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">건식사료</p></a>
+									<a href="#">
+										<p class="font-11 bold">건식사료</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -170,7 +210,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/에어동결사료.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">에어/동결사료</p></a>
+									<a href="#">
+										<p class="font-11 bold">에어/동결사료</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -178,7 +220,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/더보기.jpg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">더보기</p></a>
+									<a href="#">
+										<p class="font-11 bold">더보기</p>
+									</a>
 								</div>
 							</li>
 						</ul>
@@ -191,7 +235,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/간식파우치.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">간식 파우치</p></a>
+									<a href="#">
+										<p class="font-11 bold">간식 파우치</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -199,7 +245,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/동결건조.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">동결/건조</p></a>
+									<a href="#">
+										<p class="font-11 bold">동결/건조</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -207,7 +255,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/영양기능.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">영양/기능</p></a>
+									<a href="#">
+										<p class="font-11 bold">영양/기능</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -215,7 +265,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/간식캔.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">간식캔</p></a>
+									<a href="#">
+										<p class="font-11 bold">간식캔</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -223,7 +275,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/저키.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">저키</p></a>
+									<a href="#">
+										<p class="font-11 bold">저키</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -231,7 +285,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/덴탈간식.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">덴탈간식</p></a>
+									<a href="#">
+										<p class="font-11 bold">덴탈간식</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -239,7 +295,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/스낵.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">스낵</p></a>
+									<a href="#">
+										<p class="font-11 bold">스낵</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -247,7 +305,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/더보기.jpg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">더보기</p></a>
+									<a href="#">
+										<p class="font-11 bold">더보기</p>
+									</a>
 								</div>
 							</li>
 						</ul>
@@ -260,7 +320,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/낚시대레이져.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">낚시대/레이져</p></a>
+									<a href="#">
+										<p class="font-11 bold">낚시대/레이져</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -268,7 +330,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/스크래쳐박스.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">스크래쳐/박스</p></a>
+									<a href="#">
+										<p class="font-11 bold">스크래쳐/박스</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -276,7 +340,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/모래.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">모래</p></a>
+									<a href="#">
+										<p class="font-11 bold">모래</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -284,7 +350,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/터널사냥본능.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">터널/사냥본능</p></a>
+									<a href="#">
+										<p class="font-11 bold">터널/사냥본능</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -292,7 +360,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/캣타워캣휠.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">캣타워/캣휠</p></a>
+									<a href="#">
+										<p class="font-11 bold">캣타워/캣휠</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -300,7 +370,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/화장실배변보조.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">화장실/배변보조</p></a>
+									<a href="#">
+										<p class="font-11 bold">화장실/배변보조</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -308,7 +380,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/공인형.svg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">공/인형</p></a>
+									<a href="#">
+										<p class="font-11 bold">공/인형</p>
+									</a>
 								</div>
 							</li>
 							<li>
@@ -316,7 +390,9 @@
 									<a href="#"><img src="resources/images/main/icons/main/더보기.jpg"></a>
 								</div>
 								<div>
-									<a href="#"><p class="font-11 bold">더보기</p></a>
+									<a href="#">
+										<p class="font-11 bold">더보기</p>
+									</a>
 								</div>
 							</li>
 						</ul>
