@@ -3,13 +3,13 @@
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <!-- Main log file -->
         <!--<file>/var/log/tomcat/pet-friends/pet-friends.log</file>-->
-		<file>D:\logs\pet-friends.log</file>
+		<file>C:\logs\pet-friends.log</file>
         
         <!-- Rolling policy for time-based logs -->
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- Log file pattern (e.g., logs/application-2025-01-28.log) -->
             <!--<fileNamePattern>/var/log/tomcat/pet-friends/pet-friends-%d{yyyy-MM-dd}.log</fileNamePattern>-->
-			<fileNamePattern>D:\logs\pet-friends-%d{yyyy-MM-dd}.log</fileNamePattern>
+			<fileNamePattern>C:\logs\pet-friends-%d{yyyy-MM-dd}.log</fileNamePattern>
             
             <!-- Maximum history: keep only 7 days -->
             <maxHistory>7</maxHistory>
