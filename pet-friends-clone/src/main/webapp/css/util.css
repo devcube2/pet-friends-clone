@@ -141,6 +141,11 @@
     height: 26px;
 }
 
+.w429h420 {
+    width: 429px;
+    height: 420px;
+}
+
 /*
     =================================
     Display
@@ -786,6 +791,10 @@
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 /*
