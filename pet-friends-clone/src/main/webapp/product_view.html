@@ -14,7 +14,7 @@
     <!-- favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-    <script src="js/product_view.js" async></script>
+    <script src="js/product_view.js" defer></script>
 </head>
 
 <body>
@@ -77,40 +77,26 @@
 
             <!-- 상품 대표 이미지-->
             <section id="product-thumbnail">
-                <!-- JS 에서 넣어준다. -->
-				<img class="w429h420" src="resources/images/products/고양이/사료/주식캔/3/slide/slide1">
+                <!-- JS 에서 넣어준다. -->				
 			</section>
 
             <section id="product-header" class="pad20-16-0">
-                <!-- JS 에서 넣어준다. -->
-                <p class="font-18 bold">알모네이쳐 캣 참치&새우 캔 70g </p>
-                <p class="font-16 text-right">2,600원</p>
-                <img src="resources/images/products/ddong-go-house.png" class="width400">
+                <!-- JS 에서 넣어준다. -->                
             </section>
 
             <section>
                 <ul id="product-main">
-                    <!-- JS 에서 넣어준다. -->
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main1"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main2"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main3"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main4"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main5"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main6"></li>
-                    <li><img src="resources/images/products/고양이/사료/주식캔/3/main7"></li>
+                    <!-- JS 에서 넣어준다. -->                    
                 </ul>
             </section>
 
             <!-- 최하단 고정 푸터 -->
-            <footer class="position-bottom-sticky pad10-0">
-                <ul class="flex-center">
-                    찜 장바구니
-                </ul>
+            <footer class="flex-center margin-bottom18">
+                <button id="agree-join-btn" type="button" class="width400 button-style-2 active cursor-pointer"
+                    onclick="resistAddress()">장바구니 담기</button>
             </footer>
         </main>
-    </div>
-
-    <script>viewProduct()</script>
+    </div>    
 </body>
 
 </html>

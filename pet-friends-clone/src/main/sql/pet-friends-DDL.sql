@@ -103,10 +103,8 @@ CREATE TABLE products (
     contents VARCHAR(1024) NOT NULL,    -- 상단 이미지 url 목록, 본문 상세정보 이미지 url 목록, 본문 텍스트 정보 등.. 필요한 여러 데이터가 json 으로 들어감 (컨트롤러에서 파싱하여 전송)
     FOREIGN KEY (pet_care_item_category2) REFERENCES categories(id) ON DELETE SET NULL  -- 외래 키 설정
 );
-insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.webp","slide2.jpeg","slide3.jpeg","slide4.jpeg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
-insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.webp","slide2.jpeg","slide3.jpeg","slide4.jpeg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
-insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.webp","slide2.jpeg","slide3.jpeg","slide4.jpeg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
-insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.webp","slide2.jpeg","slide3.jpeg","slide4.jpeg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1","slide2","slide3","slide4"], "mainList":["main1","main2","main3","main4","main5","main6","main7"]}');
+
 
 -- 주문(orders) 테이블
 CREATE TABLE orders (
