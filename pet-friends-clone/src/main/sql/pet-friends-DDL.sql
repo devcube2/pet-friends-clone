@@ -64,7 +64,7 @@ insert into categories (name) values ('파우더토핑');
 insert into categories (name) values ('우유분유음료');
 insert into categories (name) values ('영양기능');
 insert into categories (name) values ('모래');
-insert into categories (name) values ('낚시대/레이져');
+insert into categories (name) values ('낚시대레이져');
 insert into categories (name) values ('공인형');
 insert into categories (name) values ('터널사냥본능');
 insert into categories (name) values ('스크래쳐박스');
@@ -103,8 +103,19 @@ CREATE TABLE products (
     contents VARCHAR(1024) NOT NULL,    -- 상단 이미지 url 목록, 본문 상세정보 이미지 url 목록, 본문 텍스트 정보 등.. 필요한 여러 데이터가 json 으로 들어감 (컨트롤러에서 파싱하여 전송)
     FOREIGN KEY (pet_care_item_category2) REFERENCES categories(id) ON DELETE SET NULL  -- 외래 키 설정
 );
-insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1","slide2","slide3","slide4"], "mainList":["main1","main2","main3","main4","main5","main6","main7"]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('벤티 캣 참치&닭가슴살 캔 90g', 1800, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.jpg"], "mainList":["main1.webp"]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('로얄캐닌 캣 마더&베이비 캔 100g', 2590, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.jpg","slide2.jpg"], "mainList":["main1.webp","main2.webp"]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 닭고기&참치 캔', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.jpg","slide2.jpg","slide3.jpg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('알모네이쳐 캣 대서양참치 캔 70g', 2600, '고양이', '사료', 5, '', 0, 0, '{"slideList":["slide1.webp","slide2.jpg","slide3.jpg","slide4.jpg"], "mainList":["main1.webp","main2.webp","main3.webp","main4.webp","main5.webp","main6.webp","main7.webp"]}');
 
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('에이스 열빙어트릿 80g', 16900, '고양이', '간식', 24, '', 0, 0, '{"slideList":["slide1.jpg"], "mainList":[]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('에이스 치킨트릿 135g', 17900, '고양이', '간식', 24, '', 0, 0, '{"slideList":["slide1.jpg"], "mainList":[]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('메가파이브 연어 50g', 2900, '고양이', '간식', 24, '', 0, 0, '{"slideList":["slide1.jpg"], "mainList":[]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('이나바 캣 챠오 츄르비 닭가슴살&야끼가츠오 10g*4p', 2290, '고양이', '간식', 24, '', 0, 0, '{"slideList":["slide1.png"], "mainList":[]}');
+
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('집에가야돼 타이벡 챠락챠락스틱 장난감 2종 세트', 12000, '고양이', '용품', 32, '', 0, 0, '{"slideList":["slide1.png"], "mainList":[]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('호랑이 낚시대', 18000, '고양이', '용품', 32, '', 0, 0, '{"slideList":["slide1.webp"], "mainList":[]}');
+insert into products (name, price, pet_type_category, pet_care_item_category1, pet_care_item_category2, attributes, stock_quantity, discount, contents) values ('반려일상 고수의 낚시대 셀프 와이어', 6900, '고양이', '용품', 32, '', 0, 0, '{"slideList":["slide1.webp"], "mainList":[]}');
 
 -- 주문(orders) 테이블
 CREATE TABLE orders (

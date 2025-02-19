@@ -1,6 +1,7 @@
 const getProductList = async () => {
 	let productListCount = document.querySelector('#product-list-count');
 	let productList = document.querySelector('#product-list');
+	let productCategory2 = document.querySelector('#product-category2');
 
 	let html = '';
 	const option = { method: 'GET' };
@@ -13,11 +14,23 @@ const getProductList = async () => {
 		const category1 = params.get("petCareItemCategory1");
 		const category2 = params.get("petCareItemCategory2");
 
-		const response = await fetch(`/pet-friends-clone/product/list?petType=${type}&petCareItemCategory1=${category1}&petCareItemCategory2=${category2}`, option);
+		const url = `/pet-friends-clone/product/list?petType=${type}&petCareItemCategory1=${category1}&petCareItemCategory2=${category2}`;
+		console.log(url);
+		const response = await fetch(url, option);
+		console.log(response);
 		const dtoList = await response.json();
+		
+		console.log(dtoList);
+		console.log(dtoList.length);
+		if (dtoList.length == 0) {
+			productList.innerHTML = '상품이 없습니다.';
+			return;
+		}
+		
+		productCategory2.innerHTML = dtoList[0].petCareItemCategory2s;
 
 		dtoList.forEach(dto => {
-			dto.contents = JSON.parse(dto.contents);						
+			dto.contents = JSON.parse(dto.contents);
 			html += `
                 <li class="width190 margin-bottom12">
 					<a href="product_view.html?productId=${dto.id}">
