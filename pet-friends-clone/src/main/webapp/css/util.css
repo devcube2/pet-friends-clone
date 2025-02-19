@@ -563,10 +563,12 @@
     border: 1px solid #9ca1aa;
     border-radius: 5px;
     font-size: 15px;
-    width: 400px;
-    opacity: 0.5;
+    width: 400px;    
     padding: 20px;
     margin-top: 10px;
+}
+.bd-inputbox-1::placeholder {
+    opacity: 0.5;
 }
 
 .bd-inputbox-2 {
