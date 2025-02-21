@@ -1,79 +1,15 @@
-### * 펫프렌즈 클론 개발
-  동영상 보고 똑같이 따라치는 개발 아니고, 직접 사이트 방문해서 디자인만 참고하고 이미지 리소스 등 직접 가져와서 바닥부터 직접 새로 개발하는 프로젝트입니다.
+### * 펫프렌즈(https://m.pet-friends.co.kr/main/tab/6) 클론 개발
+  대상 쇼핑몰 웹사이트 방문하여 디자인과 리소스 등 크롬 웹브라우저(F12)로 직접 확인하며, 바닥부터 직접 클론 개발한 프로젝트입니다.
 
-https://m.pet-friends.co.kr/main/tab/6
+### 개발 언어 및 기술 스택
+![Java](https://img.shields.io/badge/Java-007396?style=flat&logo=java&logoColor=white)
+![Servlet](https://img.shields.io/badge/Servlet-008FCC?style=flat&logo=java&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=html5&logoColor=white)
+![CSS](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black)
 
-### * 1차 개발 범위 (일정상 구현 안하는건 x, 표시까지 안하는건 xx, 구현할지말지 못정한건 ?)
-    1. 랜딩 페이지 바탕화면
-    2. 랜딩 페이지 헤더
-        * 1라인
-          # 카테고리 - 고양이 카테고리만 구현 (강아지는 차후 추가)
-          # 배송주소 등록
-          # 돋보기 검색(xx)
-          # 장바구니
-        * 2라인
-          # HOME
-          # 웰컴펫페어(x)
-          # 사료 최저가 도전!(x)
-          # NEW신상(x)
-          # 맘마샘플(x)
-          # 체험단-특가(x)
-          # 비밀상점(x)
-          # 몽시리 추천-AI(x)
-          # 이벤트(x)
-    3. 랜딩 페이지 메인 - 홍보 로케이션 (이미지 20장)
-    4. 랜딩 페이지 메인 - 공지글 로케이션(xx)
-    5. 랜딩 페이지 메인 - 사료(주식캔, 어덜트(x), 키튼(x), 전연령(x), 파우치(x), 건식사료(x), 에어/동결사료(x)), 간식(x), 용품(x)
-    6. 랜딩 페이지 메인 - 육아질문(x), 사냥놀이(x), 수의사상담(x)
-    7. 랜딩 페이지 메인 - 재구매율 목록
-    8. 랜딩 페이지 메인 - 맘마값 부담 DOWN 목록(xx) 
-    9. 랜딩 페이지 메인 - 육아 고수가 알려주는 육묘 치트키 목록(xx) 
-    10. 랜딩 페이지 메인 - 오늘이 제일 싸요 목록(xx)
-    11. 랜딩 페이지 메인 - 집사님 이런 상품 어떠세요? 목록(xx)
-    12. 랜딩 페이지 메인 - 오직 펫프에서만! 목록(xx)
-    13. 랜딩 페이지 메인 - 부담없이 먹여보세요! 목록(xx)
-    14. 랜딩 페이지 메인 - HOT 신상 목록(xx)
-    15. 랜딩 페이지 메인 - 평점 4.5이상! 심쿵팸들의 선택(?)
-    16. 랜딩 페이지 메인 - 내새꾸 위한 육아 고민(xx)
-    17. 랜딩 페이지 메인 - 카테고리별 베스트상품(xx)
-    18. 랜딩 페이지 메인 - 카테고리별 베스트상품(xx)
-    19. 랜딩 페이지 메인 - 펫프렌즈 배송안내(xx)
-    20. 랜딩 페이지 메인 - 카테고리 인기상품(xx)
-    21. 랜딩 페이지 메인 - 펫프 인기검색어(?)
-    22. 랜딩 페이지 메인 - 공지글 로케이션(xx)
-    23. 랜딩 페이지 메인 - 메인페이지 푸터
-    24. 랜딩 페이지 푸터
-### * 그래서 1차 개발 범위 확정 및 미정
-    1. 랜딩 페이지 바탕화면
-    2. 랜딩 페이지 헤더
-        * 1라인
-          # 카테고리 - 고양이 카테고리만 구현 (강아지는 차후 추가)
-          # 배송주소 등록              
-          # 장바구니
-        * 2라인
-          # HOME
-          # 웰컴펫페어(x)
-          # 사료 최저가 도전!(x)
-          # NEW신상(x)
-          # 맘마샘플(x)
-          # 체험단-특가(x)
-          # 비밀상점(x)
-          # 몽시리 추천-AI(x)
-          # 이벤트(x)
-    3. 랜딩 페이지 메인 - 홍보 로케이션 (이미지 20장)    
-    4. 랜딩 페이지 메인
-        * 사료
-          # 주식캔
-          # 어덜트(x)
-          # 키튼(x)
-          # 전연령(x)
-          # 파우치(x)
-          # 건식사료(x)
-          # 에어/동결사료(x)
-        * 간식(x)
-        * 용품(x))
-    5. 랜딩 페이지 메인 - 재구매율 목록    
-    6. 랜딩 페이지 메인 - 평점 4.5이상! 심쿵팸들의 선택(?)    
-    7. 랜딩 페이지 메인 - 펫프 인기검색어(?)
-    8. 랜딩 페이지 메인 - 메인페이지 푸터
-    9. 랜딩 페이지 푸터
+### Java 백엔드 라이브러리
+![Jackson](https://img.shields.io/badge/Jackson-000000?style=flat&logo=java&logoColor=white)
+![HikariCP](https://img.shields.io/badge/HikariCP-007396?style=flat&logo=apachemaven&logoColor=white)
+![SLF4J](https://img.shields.io/badge/SLF4J-1B1B1B?style=flat&logo=logstash&logoColor=white)
+![Logback](https://img.shields.io/badge/Logback-DC382D?style=flat&logo=logstash&logoColor=white)
