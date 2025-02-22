@@ -13,6 +13,8 @@
 ![SQL](https://img.shields.io/badge/SQL-00758F?style=flat&logo=sqlite&logoColor=white)
 #### RDBMS
 ![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=mariadb&logoColor=white)
+#### Cloud
+[![Oracle Cloud](https://img.shields.io/badge/Oracle%20Cloud-F80000?style=flat&logo=oracle&logoColor=white)](https://cloud.oracle.com/)
 
 ---
 
@@ -32,6 +34,8 @@
 ### 개발프로젝트 운영
 https://devcube.duckdns.org/pet-friends-clone/
 
-프로젝트 일정(대략 2주)상 현재 1차개발만 완료한 상황입니다.. 업로드된 시연영상 이외의 기능은 동작하지 않습니다.
+오라클 클라우드 프리티어로 운영하고 있습니다.
+
+프로젝트에 주어진 개발 일정(대략 2주)상 현재 1차개발만 완료한 상황입니다.. 업로드된 시연영상 이외의 기능은 동작하지 않습니다.
 
 여유가 생기면 카카오페이 주문 결제 기능 추가해 볼 예정입니다.
